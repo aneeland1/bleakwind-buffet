@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Amy Neeland
- * Class: SailorSoda.cs
- * Purpose: This class represents the Sailor Soda item
+ * Class: MadOtarGrits.cs
+ * Purpose: This class represents the Mad Otar Grits item
  */
 
 using System;
@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Drink
+namespace BleakwindBuffet.Data.Sides
 {
-    public class SailorSoda
+    public class MadOtarGrits
     {
         public Size Size { get; set; } = Size.Small;
 
@@ -22,14 +22,14 @@ namespace BleakwindBuffet.Data.Drink
         {
             get
             {
-                switch(Size)
+                switch (Size)
                 {
                     case Size.Small:
-                        return 1.42;
+                        return 1.22;
                     case Size.Medium:
-                        return 1.74;
+                        return 1.58;
                     case Size.Large:
-                        return 2.07;
+                        return 1.93;
                     default:
                         throw new NotImplementedException($"Unknown size of (Size)");
                 }
@@ -43,29 +43,19 @@ namespace BleakwindBuffet.Data.Drink
         {
             get
             {
-                switch(Size)
+                switch (Size)
                 {
                     case Size.Small:
-                        return 117;
+                        return 105;
                     case Size.Medium:
-                        return 153;
+                        return 142;
                     case Size.Large:
-                        return 205;
+                        return 179;
                     default:
                         throw new NotImplementedException($"Unknown size of (Size)");
                 }
             }
         }
-
-        /// <summary>
-        /// get the value of ice and sets the default value to true
-        /// </summary>
-        public bool Ice { get; set; } = true;
-
-        /// <summary>
-        /// get the value of soda flavor and sets the default value to cherry
-        /// </summary>
-        public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
 
         /// <summary>
         ///  get list of special instructions
@@ -75,7 +65,6 @@ namespace BleakwindBuffet.Data.Drink
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Ice) instructions.Add("Hold ice");
                 return instructions;
             }
         }
@@ -86,8 +75,7 @@ namespace BleakwindBuffet.Data.Drink
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            return ($"(Size) (Flavor) Sailor Soda");
+            return ($"(Size) Mad Otar Grits");
         }
-
     }
 }

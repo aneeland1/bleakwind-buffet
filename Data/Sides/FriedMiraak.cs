@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Amy Neeland
- * Class: DragonbornWaffleFries.cs
- * Purpose: This class represents the Dragonborn Waffle Fries item
+ * Class: FriedMiraak.cs
+ * Purpose: This class represents the Fried Miraak item
  */
 
 using System;
@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Side
+namespace BleakwindBuffet.Data.Sides
 {
-    public class DragonbornWaffleFries
+    public class FriedMiraak
     {
         public Size Size { get; set; } = Size.Small;
 
@@ -25,11 +25,11 @@ namespace BleakwindBuffet.Data.Side
                 switch (Size)
                 {
                     case Size.Small:
-                        return .42;
+                        return 1.78;
                     case Size.Medium:
-                        return .76;
+                        return 2.01;
                     case Size.Large:
-                        return .96;
+                        return 2.88;
                     default:
                         throw new NotImplementedException($"Unknown size of (Size)");
                 }
@@ -46,11 +46,11 @@ namespace BleakwindBuffet.Data.Side
                 switch (Size)
                 {
                     case Size.Small:
-                        return 77;
+                        return 151;
                     case Size.Medium:
-                        return 89;
+                        return 236;
                     case Size.Large:
-                        return 100;
+                        return 306;
                     default:
                         throw new NotImplementedException($"Unknown size of (Size)");
                 }
@@ -75,7 +75,7 @@ namespace BleakwindBuffet.Data.Side
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            return ($"(Size) Dragonborn Waffle Fries");
+            return ($"(Size) Fried Miraak");
         }
     }
 }

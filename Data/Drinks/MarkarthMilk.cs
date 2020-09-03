@@ -1,7 +1,7 @@
 ﻿/*
- * Author: Amy Neeland
- * Class: CandlehearthCoffee.cs
- * Purpose: This class represents the Candlehearth Coffee item
+ *Author: Amy Neeland
+ * Class: MarkarthMilk.cs
+ * Purpose: This class represents the Markarth Milk item
  */
 
 using System;
@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Drink
+namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffee
+    public class MarkarthMilk
     {
         public Size Size { get; set; } = Size.Small;
 
@@ -25,11 +25,11 @@ namespace BleakwindBuffet.Data.Drink
                 switch (Size)
                 {
                     case Size.Small:
-                        return .75;
+                        return 1.05;
                     case Size.Medium:
-                        return 1.25;
+                        return 1.11;
                     case Size.Large:
-                        return 1.75;
+                        return 1.22;
                     default:
                         throw new NotImplementedException($"Unknown size of (Size)");
                 }
@@ -46,11 +46,11 @@ namespace BleakwindBuffet.Data.Drink
                 switch (Size)
                 {
                     case Size.Small:
-                        return 7;
+                        return 56;
                     case Size.Medium:
-                        return 10;
+                        return 72;
                     case Size.Large:
-                        return 20;
+                        return 93;
                     default:
                         throw new NotImplementedException($"Unknown size of (Size)");
                 }
@@ -58,19 +58,9 @@ namespace BleakwindBuffet.Data.Drink
         }
 
         /// <summary>
-        /// get the value of ice and sets the default value to false
+        /// get the value of ice and sets the default value to true
         /// </summary>
         public bool Ice { get; set; } = false;
-
-        /// <summary>
-        /// get the value of room for cream and sets the default value to false
-        /// </summary>
-        public bool RoomForCream { get; set; } = false;
-
-        /// <summary>
-        /// get the value of decaf and sets the default value to false
-        /// </summary>
-        public bool Decaf { get; set; } = false;
 
         /// <summary>
         ///  get list of special instructions
@@ -81,7 +71,6 @@ namespace BleakwindBuffet.Data.Drink
             {
                 List<string> instructions = new List<string>();
                 if (Ice) instructions.Add("Add ice");
-                if (RoomForCream) instructions.Add("Add cream");
                 return instructions;
             }
         }
@@ -92,11 +81,7 @@ namespace BleakwindBuffet.Data.Drink
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            if (Decaf) {
-
-                return ($"(Size) Decaf Candlehearth Coffee");
-            }
-            else return($"(Size) Candlehearth Coffee");
+            return ($"(Size) Markarth Milk");
         }
     }
 }

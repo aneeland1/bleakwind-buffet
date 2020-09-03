@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Amy Neeland
- * Class: MadOtarGrits.cs
- * Purpose: This class represents the Mad Otar Grits item
+ * Class: VokunSalad.cs
+ * Purpose: This class represents the Vokun Salad item
  */
 
 using System;
@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Side
+namespace BleakwindBuffet.Data.Sides
 {
-    public class MadOtarGrits
+    public class VokunSalad
     {
         public Size Size { get; set; } = Size.Small;
 
@@ -25,11 +25,11 @@ namespace BleakwindBuffet.Data.Side
                 switch (Size)
                 {
                     case Size.Small:
-                        return 1.22;
+                        return .93;
                     case Size.Medium:
-                        return 1.58;
+                        return 1.28;
                     case Size.Large:
-                        return 1.93;
+                        return 1.82;
                     default:
                         throw new NotImplementedException($"Unknown size of (Size)");
                 }
@@ -46,11 +46,11 @@ namespace BleakwindBuffet.Data.Side
                 switch (Size)
                 {
                     case Size.Small:
-                        return 105;
+                        return 41;
                     case Size.Medium:
-                        return 142;
+                        return 52;
                     case Size.Large:
-                        return 179;
+                        return 73;
                     default:
                         throw new NotImplementedException($"Unknown size of (Size)");
                 }
@@ -75,7 +75,7 @@ namespace BleakwindBuffet.Data.Side
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            return ($"(Size) Mad Otar Grits");
+            return ($"(Size) Vokun Salad");
         }
     }
 }
