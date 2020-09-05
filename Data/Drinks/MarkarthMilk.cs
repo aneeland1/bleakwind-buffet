@@ -81,7 +81,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            return ($"(Size) Markarth Milk");
+            return ($"{Size} Markarth Milk");
         }
     }
 }

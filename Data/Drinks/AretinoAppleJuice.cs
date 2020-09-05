@@ -60,7 +60,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// get the value of ice and sets the default value to false
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice { get; set; } = false;
 
         // <summary>
         ///  get list of special instructions
@@ -70,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Ice) instructions.Add("Hold ice");
+                if (Ice) instructions.Add("Add ice");
                 return instructions;
             }
         }
@@ -81,7 +81,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            return ($"(Size) Aretino Apple Juice");
+            return ($"{Size} Aretino Apple Juice");
         }
     }
 }

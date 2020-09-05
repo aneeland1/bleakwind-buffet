@@ -75,7 +75,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            return ($"(Size) Fried Miraak");
+            return ($"{Size} Fried Miraak");
         }
     }
 }
