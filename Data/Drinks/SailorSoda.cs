@@ -86,7 +86,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            return ($"{Size} (Flavor) Sailor Soda");
+            return ($"{Size} {Flavor} Sailor Soda");
         }
 
     }
