@@ -11,14 +11,12 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class VokunSalad
-    {
-        public Size Size { get; set; } = Size.Small;
-
-        // <summary>
+    public class VokunSalad: Side, IOrderItem
+    {        
+        /// <summary>
         /// gets the items price depending on size
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -39,7 +37,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// gets item calories depending on size
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -60,7 +58,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         ///  get list of special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

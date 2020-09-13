@@ -18,6 +18,16 @@ namespace BleakwindBuffet.DataTests
     public class WarriorWaterTests
     {
         /// <summary>
+        /// Tests that the item is a drink
+        /// </summary>
+        [Fact]
+        public void ShouldBeADrink()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.IsAssignableFrom<Drink>(ww);
+        }
+
+        /// <summary>
         /// Tests that the default value of ice is true
         /// </summary>
         [Fact]

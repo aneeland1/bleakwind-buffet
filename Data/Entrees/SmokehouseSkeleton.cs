@@ -10,17 +10,20 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton
+    /// <summary>
+    /// Class for the Smokehouse Skeleton
+    /// </summary>
+    public class SmokehouseSkeleton: Entree, IOrderItem
     {
         /// <summary>
         /// gets the items price
         /// </summary>
-        public double Price => 5.62;
+        public override double Price => 5.62;
 
         /// <summary>
         /// gets item calories
         /// </summary>
-        public uint Calories => 602;
+        public override uint Calories => 602;
 
         /// <summary>
         /// get the value of sausage link and sets the default value to true
@@ -45,7 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         ///  get list of special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

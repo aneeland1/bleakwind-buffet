@@ -17,6 +17,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class BriarheartBurgerTests
     {
         /// <summary>
+        /// Tests the item is an entree
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnEntree ()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<Entree>(bb);
+        }
+
+        /// <summary>
         /// Tests that the default value of bun is true
         /// </summary>
         [Fact]

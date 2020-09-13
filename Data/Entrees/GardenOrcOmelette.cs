@@ -10,17 +10,20 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette
+    /// <summary>
+    /// Class for the Garden Orc Omelette
+    /// </summary>
+    public class GardenOrcOmelette: Entree, IOrderItem
     {
         /// <summary>
         /// gets the items price
         /// </summary>
-        public double Price => 4.57;
+        public override double Price => 4.57;
 
         /// <summary>
         /// gets item calories
         /// </summary>
-        public uint Calories => 404;
+        public override uint Calories => 404;
 
         /// <summary>
         /// get the value of broccoli and sets the default value to true
@@ -45,7 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         ///  get list of special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

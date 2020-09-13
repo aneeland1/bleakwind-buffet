@@ -17,6 +17,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class PhillyPoacherTests
     {
         /// <summary>
+        /// Tests that the item is an entree
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+            Assert.IsAssignableFrom<Entree>(pp);
+        }
+
+        /// <summary>
         /// Tests that the default value of sirloin is true
         /// </summary>
         [Fact]

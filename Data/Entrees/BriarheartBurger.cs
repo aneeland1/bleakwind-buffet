@@ -10,17 +10,20 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger
+    /// <summary>
+    /// Class for Briarheart Burger
+    /// </summary>
+    public class BriarheartBurger: Entree, IOrderItem
     {
         /// <summary>
         /// gets item price
         /// </summary>
-        public double Price => 6.32;
+        public override double Price => 6.32;
 
         /// <summary>
         /// get item calories
         /// </summary>
-        public uint Calories => 743;
+        public override uint Calories => 743;
 
         /// <summary>
         /// get the value of ketchup, also sets the default value to true
@@ -50,7 +53,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         ///  get list of special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
