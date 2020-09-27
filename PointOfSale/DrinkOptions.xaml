@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="PointOfSale.DrinkOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="600">
+
+    <Border Name="containerBorder" Background="#FFB4A58D" >
+        <Grid Background="#FFB4A58D">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350*"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel HorizontalAlignment="Left" Grid.Column ="0">
+                <TextBlock VerticalAlignment="Top" Margin="10" Name="drink" FontSize="26" FontFamily="Bookman Old Style" 
+                   Foreground="#FF225317" />
+                <Border MaxWidth="140"  BorderThickness="1" BorderBrush="#FF225317">
+
+                    <StackPanel Margin="10" HorizontalAlignment="Left" Grid.Column ="0">
+                        <RadioButton Margin="10,5" IsChecked="true" Name="small" FontSize="20" FontFamily="Bookman Old Style" Content="Small"/>
+                        <RadioButton Margin="10,5" Name="medium" FontSize="20" FontFamily="Bookman Old Style" Content="Medium"/>
+                        <RadioButton Margin="10.5" Name="large" FontSize="20" FontFamily="Bookman Old Style" Content="Large"/>
+                    </StackPanel>
+                </Border>
+                <Border MaxWidth="140" BorderThickness="1" BorderBrush="#FF225317">
+                    <StackPanel Margin="10" HorizontalAlignment="Left" Height="140" Width="150" MaxWidth="150" Grid.Column ="0">
+                        <CheckBox Name="ice" IsChecked="False" Visibility="Collapsed" Content="Ice" Margin="10,5" FontSize="20" 
+                              FontFamily="Bookman Old Style" />
+                        <CheckBox Name="decaf" IsChecked="False" Visibility="Collapsed" Content="Decaf" Margin="10,5" FontSize="20" 
+                              FontFamily="Bookman Old Style" />
+                        <CheckBox Name="cream" IsChecked="False" Visibility="Collapsed" Content="Cream" Margin="10,5" FontSize="20" 
+                              FontFamily="Bookman Old Style" />
+                        <CheckBox Name="lemon" IsChecked="False" Visibility="Collapsed" Content="Lemon" Margin="10,5" FontSize="20" 
+                              FontFamily="Bookman Old Style" />
+
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <Border Name="sodaFlavors" Visibility="Collapsed" BorderThickness="1" BorderBrush="#FF225317" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="300" Width="160" 
+                MaxWidth="160" Grid.Column ="0">
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="300" Width="160" MaxWidth="160" Grid.Column ="0">
+                    <TextBlock  Margin="10,2" Text="Soda Flavors" Height="30" FontSize="20" FontFamily="Bookman Old Style" 
+                   Foreground="#FF225317" />
+                    <RadioButton  Content="Cherry" Margin="10,5" IsChecked="true" FontSize="20" FontFamily="Bookman Old Style" />
+                    <RadioButton  Content="Blackberry" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
+                    <RadioButton  Content="Grapefruit" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
+                    <RadioButton  Content="Peach" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
+                    <RadioButton  Content="Lemon" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
+                    <RadioButton  Content="Watermelon" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
+
+                </StackPanel>
+            </Border>
+            <DockPanel MinWidth="250" VerticalAlignment="Top" Height="100" Grid.Column ="1" Margin="0,0,0,0">
+                <Button Click="Home" Name="home" HorizontalAlignment="Right" VerticalAlignment="top" Grid.Column="1" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
+                FontFamily="Bookman Old Style" MaxHeight="70" MaxWidth="80" Width="80"  Height="70" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/house.png"/>
+                    </Button.Background>
+
+                </Button>
+            </DockPanel>
+            <DockPanel MinWidth="250" VerticalAlignment="Top" Height="160" Grid.Column ="1" Margin="0,95,0,0">
+                <Button Click="Decrease" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="30" Content="&lt;" 
+                    HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="60"/>
+                <TextBox BorderThickness="2" BorderBrush="#FF225317" Foreground="#FF225317" Background="#FFB4A58D" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                     FontSize="30" FontFamily="Bookman Old Style" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" Height="60" Name="quantity"/>
+                <Button Click="Increase" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="30" Content="&gt;" HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" Width="80" Height="60"/>
+            </DockPanel>
+            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
+                FontFamily="Bookman Old Style" MaxHeight="80" MaxWidth="160" Width="160"  Height="80" >
+                Add To Order
+            </Button>
+            <Button Click="Done" Name="done" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
+                FontFamily="Bookman Old Style" MaxHeight="80" MaxWidth="85" Width="85"  Height="80" >
+                Done
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

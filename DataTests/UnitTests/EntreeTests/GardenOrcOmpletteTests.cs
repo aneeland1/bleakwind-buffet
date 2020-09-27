@@ -27,6 +27,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<IOrderItem>(goo);
+        }
+
+        /// <summary>
         /// Tests that the default value of broccoli is true
         /// </summary>
         [Fact]

@@ -27,6 +27,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+            Assert.IsAssignableFrom<IOrderItem>(pp);
+        }
+
+        /// <summary>
         /// Tests that the default value of sirloin is true
         /// </summary>
         [Fact]

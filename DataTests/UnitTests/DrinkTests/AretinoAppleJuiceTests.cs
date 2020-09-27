@@ -28,6 +28,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<IOrderItem>(aj);
+        }
+
+        /// <summary>
         /// Tests that the default value of ice is false
         /// </summary>
         [Fact]

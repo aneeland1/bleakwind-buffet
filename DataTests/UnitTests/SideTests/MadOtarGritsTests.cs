@@ -28,6 +28,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            MadOtarGrits mg = new MadOtarGrits();
+            Assert.IsAssignableFrom<IOrderItem>(mg);
+        }
+
+        /// <summary>
         /// Tests that the default size is small
         /// </summary>
         [Fact]

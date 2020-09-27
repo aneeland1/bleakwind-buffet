@@ -26,6 +26,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            ThalmorTriple tt = new ThalmorTriple();
+            Assert.IsAssignableFrom<IOrderItem>(tt);
+        }
+
+        /// <summary>
         /// Tests that the default value of bun is true
         /// </summary>
         [Fact]

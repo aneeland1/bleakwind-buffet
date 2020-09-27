@@ -28,6 +28,16 @@ namespace BleakwindBuffet.DataTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.IsAssignableFrom<IOrderItem>(ww);
+        }
+
+        /// <summary>
         /// Tests that the default value of ice is true
         /// </summary>
         [Fact]

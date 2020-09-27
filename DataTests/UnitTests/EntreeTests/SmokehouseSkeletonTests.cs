@@ -27,6 +27,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<IOrderItem>(ss);
+        }
+
+        /// <summary>
         /// Tests that the default value of sausage is true
         /// </summary>
         [Fact]

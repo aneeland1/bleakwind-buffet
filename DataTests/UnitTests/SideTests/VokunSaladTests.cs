@@ -29,6 +29,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.IsAssignableFrom<IOrderItem>(vs);
+        }
+
+        /// <summary>
         /// Tests that the default size is small
         /// </summary>
         [Fact]

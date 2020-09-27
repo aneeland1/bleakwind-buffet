@@ -27,6 +27,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            ThugsTBone tb = new ThugsTBone();
+            Assert.IsAssignableFrom<IOrderItem>(tb);
+        }
+
+        /// <summary>
         /// Tests that the price is correct
         /// </summary>
         [Fact]

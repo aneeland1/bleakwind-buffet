@@ -28,6 +28,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.IsAssignableFrom<IOrderItem>(mm);
+        }
+
+        /// <summary>
         /// Tests that the default value of ice is false
         /// </summary>
         [Fact]

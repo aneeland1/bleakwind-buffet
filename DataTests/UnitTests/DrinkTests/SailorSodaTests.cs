@@ -31,6 +31,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         /// <summary>
+        /// Tests that the item is a IOrderItem
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnOrderItem()
+        {
+            SailorSoda ss = new SailorSoda();
+            Assert.IsAssignableFrom<IOrderItem>(ss);
+        }
+
+        /// <summary>
         /// Tests that the default value of is true
         /// </summary>
         [Fact]
