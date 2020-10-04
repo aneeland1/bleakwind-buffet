@@ -5,43 +5,56 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="600">
+             d:DesignHeight="500" d:DesignWidth="700">
 
     <Border Name="containerBorder" Background="#FFB4A58D" >
         <Grid Background="#FFB4A58D">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350*"/>
+                <ColumnDefinition Width="450*"/>
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Width="350" >
-                <TextBlock Name="side" FontSize="22" FontFamily="Bookman Old Style" Foreground="#FF225317" />
-                <RadioButton Margin="6" IsChecked="true" Name="small" FontSize="16" FontFamily="Bookman Old Style" Content="Small"/>
-                <RadioButton Margin="6" Name="medium" FontSize="16" FontFamily="Bookman Old Style" Content="Medium"/>
-                <RadioButton Margin="6" Name="large" FontSize="16" FontFamily="Bookman Old Style" Content="Large"/>
+            <StackPanel Width="450" >
+                <TextBlock Name="side" Margin="10,0" FontSize="30"/>
+                <Border HorizontalAlignment="Left" Width="200" Margin="6">
+                    <StackPanel Width="200" HorizontalAlignment="Left" Grid.Column ="0">
+                        <TextBlock FontSize="26" Text="Size"/>
+                        <ComboBox Width="200" FontWeight="DemiBold" Opacity=".5" Text="{Binding Path=Size}">
+                            <ComboBoxItem>
+                                Small
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                Medium
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                Large
+                            </ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
             </StackPanel>
             <DockPanel MinWidth="250" VerticalAlignment="Top" Height="100" Grid.Column ="1" Margin="0,0,0,0">
-                <Button Click="Home" Name="home" HorizontalAlignment="Right" VerticalAlignment="top" Grid.Column="1" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="70" MaxWidth="80" Width="80"  Height="70" >
+                <Button Click="Home" Name="home" HorizontalAlignment="Right" VerticalAlignment="top" Grid.Column="1"
+                Height="70" Width="80">
                     <Button.Background>
                         <ImageBrush ImageSource="/house.png"/>
                     </Button.Background>
 
                 </Button>
             </DockPanel>
-            <DockPanel MinWidth="250" VerticalAlignment="Top" Height="160" Grid.Column ="1" Margin="0,95,0,0">
-                <Button Click="Decrease" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="30" Content="&lt;" 
+            <DockPanel MinWidth="250" VerticalAlignment="Center" Height="160" Grid.Column ="1">
+                <Button Click="Decrease" FontWeight="Bold" FontSize="40" Content="&lt;" 
                     HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="60"/>
                 <TextBox BorderThickness="2" BorderBrush="#FF225317" Foreground="#FF225317" Background="#FFB4A58D" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                      FontSize="30" FontFamily="Bookman Old Style" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" Height="60" Name="quantity"/>
-                <Button Click="Increase" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="30" Content="&gt;" HorizontalAlignment="Left" 
+                <Button Click="Increase" FontWeight="Bold" FontSize="40" Content="&gt;" HorizontalAlignment="Left" 
                     VerticalAlignment="Center" Width="80" Height="60"/>
             </DockPanel>
-            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="80" MaxWidth="160" Width="160"  Height="80" >
+            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" 
+                MaxHeight="80" MaxWidth="160" Width="160"  Height="80" >
                 Add To Order
             </Button>
-            <Button Click="Done" Name="done" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="80" MaxWidth="85" Width="85"  Height="80" >
+            <Button Click="Done" Name="done" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1"
+                MaxHeight="80" MaxWidth="85" Width="85"  Height="80" >
                 Done
             </Button>
 

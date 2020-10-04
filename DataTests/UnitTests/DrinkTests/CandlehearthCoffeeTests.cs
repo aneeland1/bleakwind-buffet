@@ -19,6 +19,85 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class CandlehearthCoffeeTests
     {
         /// <summary>
+        /// checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIce()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "Ice", () =>
+            {
+                cc.Ice = true;
+            });
+
+            Assert.PropertyChanged(cc, "Ice", () =>
+            {
+                cc.Ice = false;
+            });
+        }
+
+        /// <summary>
+        /// checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingDecafNotifiesDecaf()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "Decaf", () =>
+            {
+                cc.Decaf = true;
+            });
+
+            Assert.PropertyChanged(cc, "Decaf", () =>
+            {
+                cc.Decaf = false;
+            });
+        }
+
+        /// <summary>
+        /// checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingRoomForCreamNotifiesRoomForCream()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "RoomForCream", () =>
+            {
+                cc.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(cc, "RoomForCream", () =>
+            {
+                cc.RoomForCream = false;
+            });
+        }
+
+        /// <summary>
+        /// checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSize()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "Size", () =>
+            {
+                cc.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(cc, "Size", () =>
+            {
+                cc.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(cc, "Size", () =>
+            {
+                cc.Size = Size.Small;
+            });
+        }
+
+
+
+        /// <summary>
         /// Tests that item is a drink
         /// </summary>
         [Fact]

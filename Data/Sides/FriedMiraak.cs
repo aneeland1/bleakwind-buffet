@@ -8,14 +8,33 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak: Side, IOrderItem
+    public class FriedMiraak: Side, IOrderItem, INotifyPropertyChanged
     {
-        /// <summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //private variables for properties
+        private Size size = Size.Small;
+
+        /// <value>
+        /// gets and sets the size of side
+        /// </value>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+        
+        /// <value>
         /// gets the items price depending on size
-        /// </summary>
+        /// </value>
         public override double Price
         {
             get
@@ -34,9 +53,9 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-        /// <summary>
+        /// <value>
         /// gets item calories depending on size
-        /// </summary>
+        /// </value>
         public override uint Calories
         {
             get
@@ -55,9 +74,9 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-        /// <summary>
+        /// <value>
         ///  get list of special instructions
-        /// </summary>
+        /// </value>
         public override List<string> SpecialInstructions
         {
             get
@@ -67,9 +86,9 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Sets the to String to the item name
-        /// </summary>
+        /// </value>
         /// <returns>name of item</returns>
         public override string ToString()
         {

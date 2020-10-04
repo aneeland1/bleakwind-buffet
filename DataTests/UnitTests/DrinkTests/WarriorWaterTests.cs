@@ -18,6 +18,42 @@ namespace BleakwindBuffet.DataTests
     public class WarriorWaterTests
     {
         /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.Ice = true;
+            });
+
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.Ice = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingLemonNotifiesLemonProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.Lemon = true;
+            });
+
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.Lemon = false;
+            });
+        }
+
+        /// <summary>
         /// Tests that the item is a drink
         /// </summary>
         [Fact]

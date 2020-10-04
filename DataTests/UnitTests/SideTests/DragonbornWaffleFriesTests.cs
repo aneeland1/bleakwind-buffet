@@ -19,6 +19,29 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class DragonbornWaffleFriesTests
     {
         /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            DragonbornWaffleFries df = new DragonbornWaffleFries();
+            Assert.PropertyChanged(df, "Size", () =>
+            {
+                df.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(df, "Size", () =>
+            {
+                df.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(df, "Size", () =>
+            {
+                df.Size = Size.Small;
+            });
+        }
+
+        /// <summary>
         /// Tests that item is a side
         /// </summary>
         [Fact]

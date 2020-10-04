@@ -7,42 +7,74 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class for the Philly Poacher
     /// </summary>
-    public class PhillyPoacher: Entree, IOrderItem
+    public class PhillyPoacher: Entree, IOrderItem, INotifyPropertyChanged
     {
-        /// <summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //private variables for properties
+        private bool sirloin = true;
+        private bool onion = true;
+        private bool roll = true;
+
+        /// <value>
         /// gets the items price
-        /// </summary>
+        /// </value>
         public override double Price => 7.23;
 
-        /// <summary>
+        /// <value>
         /// gets item calories
-        /// </summary>
+        /// </value>
         public override uint Calories => 784;
 
-        /// <summary>
+        /// <value>
         /// get the value of sirloin and sets the default value to true
-        /// </summary>
-        public bool Sirloin { get; set; } = true;
+        /// </value>
+        public bool Sirloin
+        {
+            get => sirloin;
+            set
+            {
+                sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get value of onion and sets the default value to true
-        /// </summary>
-        public bool Onion { get; set; } = true;
+        /// </value>
+        public bool Onion
+        {
+            get => onion;
+            set
+            {
+                onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get value of roll and sets the default value to true
-        /// </summary>
-        public bool Roll { get; set; } = true;
+        /// </value>
+        public bool Roll
+        {
+            get => roll;
+            set
+            {
+                roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         ///  get list of special instructions
-        /// </summary>
+        /// </value>
         public override List<string> SpecialInstructions
         {
             get

@@ -8,38 +8,74 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// The Warrior Water item
     /// </summary>
-    public class WarriorWater: Drink, IOrderItem
+    public class WarriorWater: Drink, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //private variables for properties
+        private bool ice = true;
+        private bool lemon = false;
+        private Size size = Size.Small;
         
-        /// <summary>
+        /// <value>
+        /// gets and sets the size of drink
+        /// </value>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
+        /// <value>
         /// gets item price
-        /// </summary>
+        /// </value>
         public override double Price => 0;
 
-        /// <summary>
+        /// <value>
         /// gets item calories
-        /// </summary>
+        /// </value>
         public override uint Calories => 0;
 
-        /// <summary>
+        /// <value>
         /// get the value of ice and sets the default value to true
-        /// </summary>
-        public bool Ice { get; set; } = true;
+        /// </value>
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get the value of lemon and sets the default value to false
-        /// </summary>
-        public bool Lemon { get; set; } = false;
+        /// </value>
+        public bool Lemon
+        {
+            get => lemon;
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         ///  get list of special instructions
-        /// </summary>
+        /// </value>
         public override List<string> SpecialInstructions
         {
             get

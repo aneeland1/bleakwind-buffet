@@ -8,15 +8,34 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
+using System.Net.Http.Headers;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class MadOtarGrits: Side, IOrderItem
+    public class MadOtarGrits: Side, IOrderItem, INotifyPropertyChanged
     {
-        
-        /// <summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //private variables for properties
+        private Size size = Size.Small;
+
+        /// <value>
+        /// gets and sets size of side
+        /// </value>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
+        /// <value>
         /// gets the items price depending on size
-        /// </summary>
+        /// </value>
         public override double Price
         {
             get
@@ -35,9 +54,9 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-        /// <summary>
+        /// <value>
         /// gets item calories depending on size
-        /// </summary>
+        /// </value>
         public override uint Calories
         {
             get
@@ -56,9 +75,9 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-        /// <summary>
+        /// <value>
         ///  get list of special instructions
-        /// </summary>
+        /// </value>
         public override List<string> SpecialInstructions
         {
             get

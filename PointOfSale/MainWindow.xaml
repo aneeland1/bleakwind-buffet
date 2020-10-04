@@ -5,7 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="700" Width="1100">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="#FFB4A58D"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Bookman Old Style"/>
+            <Setter Property="Background" Value="#FF225317"/>
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="Foreground" Value="#FF3A3A2A"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Bookman Old Style"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#FF3A3A2A"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Bookman Old Style"/>
+            <Setter Property="IsChecked" Value="False"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#FF3A3A2A"/>
+            <Setter Property="FontFamily" Value="Bookman Old Style"/>
+            <Setter Property="FontSize" Value="60"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Foreground" Value="#FF3A3A2A"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="#FFB4A58D"/>
+            <Setter Property="BorderBrush" Value="#FF225317"/>
+        </Style>
+    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="/avenue.jpg"/>
     </Window.Background>
@@ -15,11 +45,11 @@
             <ColumnDefinition Width = "600*"/>
             <ColumnDefinition Width = "200*"/>
         </Grid.ColumnDefinitions>
-        <local:CategoryComponent Margin="5" MaxHeight="340" />
+        <local:CategoryComponent Margin="5" MaxHeight="500" MaxWidth="700"  />
         <local:OrderComponent Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Center" VerticalAlignment="Bottom" Text = "Welcome to Bleakwind Buffet" Height="36" Width="600" 
-                 FontFamily="Bookman Old Style" FontSize="34" Background="{x:Null}" Foreground="#FF1C5F03" FontWeight="Bold" 
-                 TextAlignment="Center" Margin="10"  BorderBrush="{x:Null}"   />
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Text = "Welcome to Bleakwind Buffet" Height="50" Width="600" 
+                 FontSize="34" Background="{x:Null}" Foreground="#FF1C5F03" FontWeight="Bold" 
+                 TextAlignment="Center" Margin="10"  />
     </Grid>
 
 

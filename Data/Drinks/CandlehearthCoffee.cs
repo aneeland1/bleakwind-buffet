@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -14,11 +15,32 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class represents the Candlehearth Coffee item
     /// </summary>
-    public class CandlehearthCoffee: Drink, IOrderItem
+    public class CandlehearthCoffee: Drink, IOrderItem, INotifyPropertyChanged
     {
-        /// <summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //private variables for properties
+        private bool ice = false;
+        private bool decaf;
+        private bool roomForCream = false;
+        private Size size = Size.Small;
+
+        /// <value>
+        /// Gets and sets the Size of the drink
+        /// </value>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
+        /// <value>
         /// gets the items price depending on size
-        /// </summary>
+        /// </value>
         public override double Price
         {
             get
@@ -37,9 +59,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// gets item calories depending on size
-        /// </summary>
+        /// </value>
         public override uint Calories
         {
             get
@@ -57,25 +79,49 @@ namespace BleakwindBuffet.Data.Drinks
                 }
             }
         }
-
-        /// <summary>
+                 
+        /// <value>
         /// get the value of ice and sets the default value to false
-        /// </summary>
-        public bool Ice { get; set; } = false;
+        /// </value>
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get the value of room for cream and sets the default value to false
-        /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        /// </value>
+        public bool RoomForCream
+        {
+            get => roomForCream;
+            set
+            {
+                roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("roomForCream"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get the value of decaf and sets the default value to false
-        /// </summary>
-        public bool Decaf { get; set; } = false;
+        /// </value>
+        public bool Decaf
+        {
+            get => decaf;
+            set
+            {
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("decaf"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         ///  get list of special instructions
-        /// </summary>
+        /// </value>
         public override List<string> SpecialInstructions
         {
             get

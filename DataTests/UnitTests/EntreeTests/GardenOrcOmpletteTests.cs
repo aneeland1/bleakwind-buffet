@@ -11,11 +11,84 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
+    
     /// <summary>
     /// Runs tests on the GardenOrcOmelette.cs class
     /// </summary>
     public class GardenOrcOmeletteTests
     {
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingBroccoliNotifiesBroccoliProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.PropertyChanged(goo, "Broccoli", () =>
+            {
+                goo.Broccoli = true;
+            });
+
+            Assert.PropertyChanged(goo, "Broccoli", () =>
+            {
+                goo.Broccoli = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingMushroomsNotifiesMushroomsProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.PropertyChanged(goo, "Mushrooms", () =>
+            {
+                goo.Mushrooms = true;
+            });
+
+            Assert.PropertyChanged(goo, "Mushrooms", () =>
+            {
+                goo.Mushrooms = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.PropertyChanged(goo, "Tomato", () =>
+            {
+                goo.Tomato = true;
+            });
+
+            Assert.PropertyChanged(goo, "Tomato", () =>
+            {
+                goo.Tomato = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingCheddarNotifiesCheddarProperty()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.PropertyChanged(goo, "Cheddar", () =>
+            {
+                goo.Cheddar = true;
+            });
+
+            Assert.PropertyChanged(goo, "Cheddar", () =>
+            {
+                goo.Cheddar = false;
+            });
+        }
+
         /// <summary>
         /// Tests that the item is an entree
         /// </summary>

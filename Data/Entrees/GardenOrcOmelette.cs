@@ -7,47 +7,88 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class for the Garden Orc Omelette
     /// </summary>
-    public class GardenOrcOmelette: Entree, IOrderItem
+    public class GardenOrcOmelette: Entree, IOrderItem, INotifyPropertyChanged
     {
-        /// <summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //private variables for properties
+        private bool broccoli = true;
+        private bool mushrooms = true;
+        private bool tomato = true;
+        private bool cheddar = true;
+
+        /// <value>
         /// gets the items price
-        /// </summary>
+        /// </value>
         public override double Price => 4.57;
 
-        /// <summary>
+        /// <value>
         /// gets item calories
-        /// </summary>
+        /// </value>
         public override uint Calories => 404;
 
-        /// <summary>
+        /// <value>
         /// get the value of broccoli and sets the default value to true
         /// </summary>
-        public bool Broccoli { get; set; } = true;
+        public bool Broccoli
+        {
+            get => broccoli;
+            set
+            {
+                broccoli = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get the value of mushrooms and sets the default value to true
-        /// </summary>
-        public bool Mushrooms { get; set; } = true;
+        /// </value>
+        public bool Mushrooms
+        {
+            get => mushrooms;
+            set
+            {
+                mushrooms = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get the value of tomato and sets the default value to true
-        /// </summary>
-        public bool Tomato { get; set; } = true;
+        /// </value>
+        public bool Tomato
+        {
+            get => tomato;
+            set
+            {
+                tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get the value of cheddar and sets the default value to true
-        /// </summary>
-        public bool Cheddar { get; set; } = true;
+        /// </value>
+        public bool Cheddar
+        {
+            get => cheddar;
+            set
+            {
+                cheddar = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         ///  get list of special instructions
-        /// </summary>
+        /// </value>
         public override List<string> SpecialInstructions
         {
             get

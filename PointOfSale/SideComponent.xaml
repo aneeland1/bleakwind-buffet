@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="600">
+             d:DesignHeight="500" d:DesignWidth="700">
     <Border Name="containerBorder" >
         <Grid Background="#FFB4A58D" >
 
@@ -15,36 +15,43 @@
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Click="VokunSalad" Name="vokunSalad" Grid.Column="0" Grid.Row="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="85" MaxWidth="235">
+            <Button Click="VokunSalad" Name="vokunSalad" Grid.Column="0" Grid.Row="1" Height="100" Width="260">
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb2.png" Stretch="UniformToFill"/>
+                </Button.Background>
                 Vokun Salad
             </Button>
-            <Button Click="FriedMiraak" Name="friedMiraak" Grid.Column="0" Grid.Row="2" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="85" MaxWidth="235">
+            <Button Click="FriedMiraak" Name="friedMiraak" Grid.Column="0" Grid.Row="2" Height="100" Width="260">
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb.png" Stretch="UniformToFill"/>
+                </Button.Background>
                 Fried Miraak
             </Button>
 
-            <Button Click="MadOtarGrits" Name="madOtarGrits" Grid.Column="1" Grid.Row="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="85" MaxWidth="235">
+            <Button Click="MadOtarGrits" Name="madOtarGrits" Grid.Column="1" Grid.Row="1" Height="100" Width="260">
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb3.png" Stretch="UniformToFill"/>
+                </Button.Background>
                 Mad Otar Grits
             </Button>
-            <Button Click="DragonbornWaffleFries" Name="dragonbornWaffleFries" Grid.Column="1" Grid.Row="2" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="85" MaxWidth="235">
+            <Button Click="DragonbornWaffleFries" Name="dragonbornWaffleFries" Grid.Column="1" Grid.Row="2" Height="100" Width="260">
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb2.png" Stretch="None"/>
+                </Button.Background>
                 Dragonborn Waffle Fries
             </Button>
 
-            <Button Click="Home" Name="home" Grid.Column="2" Grid.Row="0" Foreground="#FF3A3A2A" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="70" MaxWidth="80">
+            <Button Click="Home" Name="home" Grid.Column="2" Grid.Row="0" MaxHeight="60" MaxWidth="100">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="/house.png"/>
                 </Button.Background>
             </Button>
-            <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Text="Sides" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" Foreground="#FF3A3A2A" />
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Text="Sides" HorizontalAlignment="Center"/>
         </Grid>
     </Border>
 </UserControl>

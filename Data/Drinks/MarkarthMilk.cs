@@ -8,17 +8,37 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// The Markarth milk item
     /// </summary>
-    public class MarkarthMilk: Drink, IOrderItem
+    public class MarkarthMilk: Drink, IOrderItem, INotifyPropertyChanged
     {
-        /// <summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+                
+        //private variables for properties
+        private bool ice = false;
+        private Size size = Size.Small;
+
+        /// <value>
+        /// gets and sets the size of the drink
+        /// </value>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
+        /// <value>
         /// gets the items price depending on size
-        /// </summary>
+        /// </value>
         public override double Price
         {
             get
@@ -37,9 +57,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// gets item calories depending on size
-        /// </summary>
+        /// </value>
         public override uint Calories
         {
             get
@@ -58,14 +78,23 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
-        /// get the value of ice and sets the default value to true
-        /// </summary>
-        public bool Ice { get; set; } = false;
 
-        /// <summary>
+        /// <value>
+        /// get the value of ice and sets the default value to true
+        /// </value>
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
+
+        /// <value>
         ///  get list of special instructions
-        /// </summary>
+        /// </value>
         public override List<string> SpecialInstructions
         {
             get

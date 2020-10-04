@@ -5,77 +5,94 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="600">
-
+             d:DesignHeight="500" d:DesignWidth="700">
+    
     <Border Name="containerBorder" Background="#FFB4A58D" >
         <Grid Background="#FFB4A58D">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350*"/>
-                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="190"/>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="240*"/>
             </Grid.ColumnDefinitions>
-
-            <StackPanel HorizontalAlignment="Left" Grid.Column ="0">
-                <TextBlock VerticalAlignment="Top" Margin="10" Name="drink" FontSize="26" FontFamily="Bookman Old Style" 
-                   Foreground="#FF225317" />
-                <Border MaxWidth="140"  BorderThickness="1" BorderBrush="#FF225317">
-
-                    <StackPanel Margin="10" HorizontalAlignment="Left" Grid.Column ="0">
-                        <RadioButton Margin="10,5" IsChecked="true" Name="small" FontSize="20" FontFamily="Bookman Old Style" Content="Small"/>
-                        <RadioButton Margin="10,5" Name="medium" FontSize="20" FontFamily="Bookman Old Style" Content="Medium"/>
-                        <RadioButton Margin="10.5" Name="large" FontSize="20" FontFamily="Bookman Old Style" Content="Large"/>
+            <TextBlock Grid.ColumnSpan="2" FontSize="40" VerticalAlignment="Top" Margin="10" Name="drink"/>
+            <StackPanel Margin="0,60" HorizontalAlignment="Left" Grid.Column ="0">
+                <Border HorizontalAlignment="Left" Width="170" Margin="8" >
+                    <StackPanel Width="170" HorizontalAlignment="Left" Grid.Column ="0">
+                        <TextBlock FontSize="20" Text="Size"/>
+                        <ComboBox Width="170" FontWeight="DemiBold" Opacity=".5" Text="{Binding Path=Size}">
+                            <ComboBoxItem>
+                                Small
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                Medium
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                Large
+                            </ComboBoxItem>
+                        </ComboBox>
                     </StackPanel>
                 </Border>
-                <Border MaxWidth="140" BorderThickness="1" BorderBrush="#FF225317">
-                    <StackPanel Margin="10" HorizontalAlignment="Left" Height="140" Width="150" MaxWidth="150" Grid.Column ="0">
-                        <CheckBox Name="ice" IsChecked="False" Visibility="Collapsed" Content="Ice" Margin="10,5" FontSize="20" 
-                              FontFamily="Bookman Old Style" />
-                        <CheckBox Name="decaf" IsChecked="False" Visibility="Collapsed" Content="Decaf" Margin="10,5" FontSize="20" 
-                              FontFamily="Bookman Old Style" />
-                        <CheckBox Name="cream" IsChecked="False" Visibility="Collapsed" Content="Cream" Margin="10,5" FontSize="20" 
-                              FontFamily="Bookman Old Style" />
-                        <CheckBox Name="lemon" IsChecked="False" Visibility="Collapsed" Content="Lemon" Margin="10,5" FontSize="20" 
-                              FontFamily="Bookman Old Style" />
-
+                <Border Width="170" Height="220" Margin="8" HorizontalAlignment="Left" >
+                    <StackPanel HorizontalAlignment="Left" Grid.Column ="0" Width="170" Height="220">
+                        <TextBlock Text="Available Options" FontSize="20"/>
+                        <CheckBox Name="ice" FontSize="16" IsChecked="{Binding Path=Ice}" Visibility="Visible" Content="Ice" Margin="5"/>
+                        <CheckBox Name="decaf" FontSize="16" IsChecked="{Binding Path=Decaf}" Visibility="Collapsed" Content="Decaf" Margin="5" />
+                        <CheckBox Name="cream" FontSize="16" IsChecked="{Binding Path=RoomForCream}" Visibility="Collapsed" Content="Room For Cream" Margin="5" />
+                        <CheckBox Name="lemon" FontSize="16" IsChecked="{Binding Path=Lemon}" Visibility="Collapsed" Content="Lemon" Margin="5" />
                     </StackPanel>
                 </Border>
             </StackPanel>
-            <Border Name="sodaFlavors" Visibility="Collapsed" BorderThickness="1" BorderBrush="#FF225317" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="300" Width="160" 
-                MaxWidth="160" Grid.Column ="0">
-                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="300" Width="160" MaxWidth="160" Grid.Column ="0">
-                    <TextBlock  Margin="10,2" Text="Soda Flavors" Height="30" FontSize="20" FontFamily="Bookman Old Style" 
-                   Foreground="#FF225317" />
-                    <RadioButton  Content="Cherry" Margin="10,5" IsChecked="true" FontSize="20" FontFamily="Bookman Old Style" />
-                    <RadioButton  Content="Blackberry" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
-                    <RadioButton  Content="Grapefruit" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
-                    <RadioButton  Content="Peach" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
-                    <RadioButton  Content="Lemon" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
-                    <RadioButton  Content="Watermelon" Margin="10,5" FontSize="20" FontFamily="Bookman Old Style" />
-
-                </StackPanel>
-            </Border>
-            <DockPanel MinWidth="250" VerticalAlignment="Top" Height="100" Grid.Column ="1" Margin="0,0,0,0">
-                <Button Click="Home" Name="home" HorizontalAlignment="Right" VerticalAlignment="top" Grid.Column="1" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="70" MaxWidth="80" Width="80"  Height="70" >
+            <StackPanel Name="sodaFlavors" Visibility="Collapsed" Margin="0,60" Grid.Column="1" Width="240">
+                <TextBlock  Margin="5,4" Text="Soda Flavors" FontSize="20"/>
+                <ComboBox BorderBrush="#FF225317" FontWeight="DemiBold" Opacity=".5" Text="{Binding Path=Flavor}">
+                    <ComboBoxItem>
+                        Cherry
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Blackberry
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Grapefruit
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Peach
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Lemon
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Watermelon
+                    </ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <DockPanel MinWidth="250" VerticalAlignment="Top" Height="100" Grid.Column ="3" Margin="0,0,0,0">
+                <Button Click="Home" Name="home" HorizontalAlignment="Right" VerticalAlignment="top" Foreground="#FFB4A58D"
+                    Width="80"  Height="70" >
                     <Button.Background>
                         <ImageBrush ImageSource="/house.png"/>
                     </Button.Background>
-
                 </Button>
             </DockPanel>
-            <DockPanel MinWidth="250" VerticalAlignment="Top" Height="160" Grid.Column ="1" Margin="0,95,0,0">
-                <Button Click="Decrease" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="30" Content="&lt;" 
+            <DockPanel MinWidth="250" VerticalAlignment="Center" Height="160" Grid.Column ="2">
+                <Button Click="Decrease" FontWeight="Bold" FontSize="40" Content="&lt;" 
                     HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="60"/>
                 <TextBox BorderThickness="2" BorderBrush="#FF225317" Foreground="#FF225317" Background="#FFB4A58D" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                     FontSize="30" FontFamily="Bookman Old Style" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" Height="60" Name="quantity"/>
-                <Button Click="Increase" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="30" Content="&gt;" HorizontalAlignment="Left" 
+                     FontSize="40" FontFamily="Bookman Old Style" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" Height="60" Name="quantity"/>
+                <Button Click="Increase" FontWeight="Bold" FontSize="40" Content="&gt;" HorizontalAlignment="Left" 
                     VerticalAlignment="Center" Width="80" Height="60"/>
             </DockPanel>
-            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="80" MaxWidth="160" Width="160"  Height="80" >
+            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2" FontWeight="Bold" FontSize="20" 
+                Width="150" Height="100" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb.png" Stretch="UniformToFill"/>
+                </Button.Background>
                 Add To Order
             </Button>
-            <Button Click="Done" Name="done" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="80" MaxWidth="85" Width="85"  Height="80" >
+            <Button Click="Done" Name="done" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="2" FontWeight="Bold" FontSize="18" 
+                MaxHeight="100" MaxWidth="100" Width="95"  Height="100" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb2.png" Stretch="UniformToFill"/>
+                </Button.Background>
                 Done
             </Button>
         </Grid>

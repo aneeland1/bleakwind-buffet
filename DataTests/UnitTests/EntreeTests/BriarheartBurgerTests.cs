@@ -17,6 +17,96 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class BriarheartBurgerTests
     {
         /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, "Bun", () =>
+            {
+                bb.Bun = true;
+            });
+
+            Assert.PropertyChanged(bb, "Bun", () =>
+            {
+                bb.Bun = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, "Ketchup", () =>
+            {
+                bb.Ketchup = true;
+            });
+
+            Assert.PropertyChanged(bb, "Ketchup", () =>
+            {
+                bb.Ketchup = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, "Mustard", () =>
+            {
+                bb.Mustard = true;
+            });
+
+            Assert.PropertyChanged(bb, "Mustard", () =>
+            {
+                bb.Mustard = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, "Pickle", () =>
+            {
+                bb.Pickle = true;
+            });
+
+            Assert.PropertyChanged(bb, "Pickle", () =>
+            {
+                bb.Pickle = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, "Cheese", () =>
+            {
+                bb.Cheese = true;
+            });
+
+            Assert.PropertyChanged(bb, "Cheese", () =>
+            {
+                bb.Cheese = false;
+            });
+        }
+
+        /// <summary>
         /// Tests the item is an entree
         /// </summary>
         [Fact]

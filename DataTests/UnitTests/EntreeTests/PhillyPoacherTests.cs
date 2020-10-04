@@ -17,6 +17,60 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class PhillyPoacherTests
     {
         /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingSirloinNotifiesSirloinProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, "Sirloin", () =>
+            {
+                pp.Sirloin = true;
+            });
+
+            Assert.PropertyChanged(pp, "Sirloin", () =>
+            {
+                pp.Sirloin = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, "Onion", () =>
+            {
+                pp.Onion = true;
+            });
+
+            Assert.PropertyChanged(pp, "Onion", () =>
+            {
+                pp.Onion = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingRollNotifiesRollProperty()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, "Roll", () =>
+            {
+                pp.Roll = true;
+            });
+
+            Assert.PropertyChanged(pp, "Roll", () =>
+            {
+                pp.Roll = false;
+            });
+        }
+
+        /// <summary>
         /// Tests that the item is an entree
         /// </summary>
         [Fact]

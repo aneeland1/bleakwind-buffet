@@ -15,7 +15,79 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     /// Runs tests on the SmokehouseSkeleton.cs class
     /// </summary>
     public class SmokehouseSkeletonTests
-    {   
+    {
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingSausageLinkNotifiesSausageLinkProperty()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, "SausageLink", () =>
+            {
+                ss.SausageLink = true;
+            });
+
+            Assert.PropertyChanged(ss, "SausageLink", () =>
+            {
+                ss.SausageLink = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingEggNotifiesEggProperty()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, "Egg", () =>
+            {
+                ss.Egg = true;
+            });
+
+            Assert.PropertyChanged(ss, "Egg", () =>
+            {
+                ss.Egg = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingHashBrownsNotifiesHashBrownsProperty()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, "HashBrowns", () =>
+            {
+                ss.HashBrowns = true;
+            });
+
+            Assert.PropertyChanged(ss, "HashBrowns", () =>
+            {
+                ss.HashBrowns = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingPancakeNotifiesPancakeProperty()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, "Pancake", () =>
+            {
+                ss.Pancake = true;
+            });
+
+            Assert.PropertyChanged(ss, "Pancake", () =>
+            {
+                ss.Pancake = false;
+            });
+        }
+
         /// <summary>
         /// Tests that this is an entree
         /// </summary>

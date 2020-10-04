@@ -5,58 +5,69 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="600">
+             d:DesignHeight="500" d:DesignWidth="700">
+
     <Border Name="containerBorder" Background="#FFB4A58D" >
         <Grid Background="#FFB4A58D">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="350*"/>
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Width="350" >
-                <TextBlock Name="entree" FontSize="22" FontFamily="Bookman Old Style" Foreground="#FF225317" />
-                <CheckBox Margin="6" IsChecked="False" Name="bacon" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Bacon"/>
-                <CheckBox Margin="6" IsChecked="False" Name="broccoli" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Broccoli"/>
-                <CheckBox Margin="6" IsChecked="False" Name="bun" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Bun"/>
-                <CheckBox Margin="6" IsChecked="False" Name="cheddar" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Cheddar"/>
-                <CheckBox Margin="6" IsChecked="False" Name="cheese" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Cheese"/>
-                <CheckBox Margin="6" IsChecked="False" Name="egg" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Egg"/>
-                <CheckBox Margin="6" IsChecked="False" Name="hashbrowns" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Hashbrowns"/>
-                <CheckBox Margin="6" IsChecked="False" Name="ketchup" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Ketchup"/>
-                <CheckBox Margin="6" IsChecked="False" Name="lettuce" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Lettuce"/>
-                <CheckBox Margin="6" IsChecked="False" Name="mayo" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Mayo"/>
-                <CheckBox Margin="6" IsChecked="False" Name="mushrooms" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Mushrooms"/>
-                <CheckBox Margin="6" IsChecked="False" Name="mustard" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Mustard"/>
-                <CheckBox Margin="6" IsChecked="False" Name="onion" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Onion"/>
-                <CheckBox Margin="6" IsChecked="False" Name="pancake" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Pancake"/>
-                <CheckBox Margin="6" IsChecked="False" Name="pickle" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Pickle"/>
-                <CheckBox Margin="6" IsChecked="False" Name="roll" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Roll"/>
-                <CheckBox Margin="6" IsChecked="False" Name="sausage" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Sausage Link"/>
-                <CheckBox Margin="6" IsChecked="False" Name="sirloin" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Sirloin"/>
-                <CheckBox Margin="6" IsChecked="False" Name="tomato" Visibility="Collapsed" FontSize="16" FontFamily="Bookman Old Style" Content="Tomato"/>
+            <StackPanel Width="400" >
+                <TextBlock Name="entree" FontSize="28" FontWeight="Bold" >
+                    <TextBlock.TextDecorations>
+                        <TextDecoration/>
+                    </TextBlock.TextDecorations>
+                </TextBlock>
+                <TextBlock Text="Available Options" FontSize="20"/>
+                <CheckBox Margin="6" Name="bacon" Visibility="Collapsed" Content="Bacon" IsChecked="{Binding Path=Bacon}"/>
+                <CheckBox Margin="6" Name="broccoli" Visibility="Collapsed" Content="Broccoli" IsChecked="{Binding Path=Broccoli}"/>
+                <CheckBox Margin="6" Name="bun" Visibility="Collapsed" Content="Bun" IsChecked="{Binding Path=Bun}"/>
+                <CheckBox Margin="6" Name="cheddar" Visibility="Collapsed" Content="Cheddar" IsChecked="{Binding Path=Cheddar}"/>
+                <CheckBox Margin="6" Name="cheese" Visibility="Collapsed" Content="Cheese" IsChecked="{Binding Path=Cheese}"/>
+                <CheckBox Margin="6" Name="egg" Visibility="Collapsed" Content="Egg" IsChecked="{Binding Path=Egg}"/>
+                <CheckBox Margin="6" Name="hashbrowns" Visibility="Collapsed" Content="Hashbrowns" IsChecked="{Binding Path=HashBrowns}"/>
+                <CheckBox Margin="6" Name="ketchup" Visibility="Collapsed" Content="Ketchup" IsChecked="{Binding Path=Ketchup}"/>
+                <CheckBox Margin="6" Name="lettuce" Visibility="Collapsed" Content="Lettuce" IsChecked="{Binding Path=Lettuce}"/>
+                <CheckBox Margin="6" Name="mayo" Visibility="Collapsed" Content="Mayo" IsChecked="{Binding Path=Mayo}"/>
+                <CheckBox Margin="6" Name="mushrooms" Visibility="Collapsed" Content="Mushrooms" IsChecked="{Binding Path=Mushrooms}"/>
+                <CheckBox Margin="6" Name="mustard" Visibility="Collapsed" Content="Mustard" IsChecked="{Binding Path=Mustard}"/>
+                <CheckBox Margin="6" Name="onion" Visibility="Collapsed" Content="Onion" IsChecked="{Binding Path=Onion}"/>
+                <CheckBox Margin="6" Name="pancake" Visibility="Collapsed" Content="Pancake" IsChecked="{Binding Path=Pancake}"/>
+                <CheckBox Margin="6" Name="pickle" Visibility="Collapsed" Content="Pickle" IsChecked="{Binding Path=Pickle}"/>
+                <CheckBox Margin="6" Name="roll" Visibility="Collapsed" Content="Roll" IsChecked="{Binding Path=Roll}"/>
+                <CheckBox Margin="6" Name="sausage" Visibility="Collapsed" Content="Sausage Link" IsChecked="{Binding Path=SausageLink}"/>
+                <CheckBox Margin="6" Name="sirloin" Visibility="Collapsed" Content="Sirloin" IsChecked="{Binding Path=Sirloin}"/>
+                <CheckBox Margin="6" Name="tomato" Visibility="Collapsed" Content="Tomato" IsChecked="{Binding Path=Tomato}"/>
             </StackPanel>
             <DockPanel MinWidth="250" VerticalAlignment="Top" Height="100" Grid.Column ="1" Margin="0,0,0,0">
-                <Button Click="Home" Name="home" HorizontalAlignment="Right" VerticalAlignment="top" Grid.Column="1" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="70" MaxWidth="80" Width="80"  Height="70" >
+                <Button Click="Home" Name="home" HorizontalAlignment="Right" VerticalAlignment="top" Grid.Column="1"  
+                Width="80"  Height="70" >
                     <Button.Background>
                         <ImageBrush ImageSource="/house.png"/>
                     </Button.Background>
-
                 </Button>
             </DockPanel>
-            <DockPanel MinWidth="250" VerticalAlignment="Top" Height="160" Grid.Column ="1" Margin="0,95,0,0">
-                <Button Click="Decrease" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="30" Content="&lt;" 
-                    HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="60"/>
+            <DockPanel MinWidth="250" VerticalAlignment="Center" Height="160" Grid.Column ="1">
+                <Button Click="Decrease" FontWeight="Bold" FontSize="40" Content="&lt;" 
+                    HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="70"/>
                 <TextBox BorderThickness="2" BorderBrush="#FF225317" Foreground="#FF225317" Background="#FFB4A58D" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                     FontSize="30" FontFamily="Bookman Old Style" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" Height="60" Name="quantity"/>
-                <Button Click="Increase" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="30" Content="&gt;" HorizontalAlignment="Left" 
+                     FontSize="40" FontFamily="Bookman Old Style" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" Height="60" Name="quantity"/>
+                <Button Click="Increase" FontWeight="Bold" FontSize="40" Content="&gt;" HorizontalAlignment="Left" 
                     VerticalAlignment="Center" Width="80" Height="60"/>
             </DockPanel>
-            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
+            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" FontWeight="Bold" FontSize="18" 
                 FontFamily="Bookman Old Style" MaxHeight="80" MaxWidth="160" Width="160"  Height="80" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb2.png" Stretch="UniformToFill"/>
+                </Button.Background>
                 Add To Order
             </Button>
-            <Button Click="Done" Name="done" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Background="#FF225317" Foreground="#FFB4A58D" FontWeight="Bold" FontSize="18" 
-                FontFamily="Bookman Old Style" MaxHeight="80" MaxWidth="85" Width="85"  Height="80" >
+            <Button Click="Done" Name="done" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" FontWeight="Bold" FontSize="18" 
+                MaxHeight="80" MaxWidth="85" Width="85"  Height="80" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb2.png" Stretch="None"/>
+                </Button.Background>
                 Done
             </Button>
 

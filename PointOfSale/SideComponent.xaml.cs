@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Sides;
 
 namespace PointOfSale
 {
@@ -40,6 +41,8 @@ namespace PointOfSale
         {
             so = new SideOptions();
             containerBorder.Child = so;
+            VokunSalad vs = new VokunSalad();
+            so.DataContext = vs;
             so.side.Text = "Vokun Salad";
         }
 
@@ -52,6 +55,8 @@ namespace PointOfSale
         {
             so = new SideOptions();
             containerBorder.Child = so;
+            FriedMiraak fm = new FriedMiraak();
+            so.DataContext = fm;
             so.side.Text = "Fried Miraak";
         }
 
@@ -64,6 +69,8 @@ namespace PointOfSale
         {
             so = new SideOptions();
             containerBorder.Child = so;
+            MadOtarGrits mg = new MadOtarGrits();
+            so.DataContext = mg;
             so.side.Text = "Mad Otar Grits";
         }
 
@@ -76,6 +83,8 @@ namespace PointOfSale
         {
             so = new SideOptions();
             containerBorder.Child = so;
+            DragonbornWaffleFries df = new DragonbornWaffleFries();
+            so.DataContext = df;
             so.side.Text = "Dragonborn Waffle Fries";
         }
 

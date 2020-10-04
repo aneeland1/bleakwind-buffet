@@ -15,7 +15,151 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     /// Runs tests on the DoubleDraugr.cs class
     /// </summary>
     public class DoubleDraugrTests
-    {   
+    {
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Bun", () =>
+            {
+                dd.Bun = true;
+            });
+
+            Assert.PropertyChanged(dd, "Bun", () =>
+            {
+                dd.Bun = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Ketchup", () =>
+            {
+                dd.Ketchup = true;
+            });
+
+            Assert.PropertyChanged(dd, "Ketchup", () =>
+            {
+                dd.Ketchup = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Mustard", () =>
+            {
+                dd.Mustard = true;
+            });
+
+            Assert.PropertyChanged(dd, "Mustard", () =>
+            {
+                dd.Mustard = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Pickle", () =>
+            {
+                dd.Pickle = true;
+            });
+
+            Assert.PropertyChanged(dd, "Pickle", () =>
+            {
+                dd.Pickle = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Cheese", () =>
+            {
+                dd.Cheese = true;
+            });
+
+            Assert.PropertyChanged(dd, "Cheese", () =>
+            {
+                dd.Cheese = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Tomato", () =>
+            {
+                dd.Tomato = true;
+            });
+
+            Assert.PropertyChanged(dd, "Tomato", () =>
+            {
+                dd.Tomato = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingLettuceNotifiesLettuceProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Lettuce", () =>
+            {
+                dd.Lettuce = true;
+            });
+
+            Assert.PropertyChanged(dd, "Lettuce", () =>
+            {
+                dd.Lettuce = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingMayoNotifiesMayoProperty()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "Mayo", () =>
+            {
+                dd.Mayo = true;
+            });
+
+            Assert.PropertyChanged(dd, "Mayo", () =>
+            {
+                dd.Mayo = false;
+            });
+        }
+
         /// <summary>
         /// Tests that the item is an entree
         /// </summary>

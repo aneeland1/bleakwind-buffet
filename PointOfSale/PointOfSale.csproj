@@ -11,10 +11,13 @@
     <None Remove="burger.png" />
     <None Remove="drink.jpg" />
     <None Remove="entrees.png" />
-    <None Remove="fries.jpg" />
+    <None Remove="hamburger.jpg" />
     <None Remove="home.jpg" />
     <None Remove="home.png" />
     <None Remove="house.png" />
+    <None Remove="treelimb.png" />
+    <None Remove="treelimb2.png" />
+    <None Remove="treelimb3.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +30,11 @@
 
   <ItemGroup>
     <Resource Include="avenue.jpg" />
+    <Resource Include="drink.jpg" />
     <Resource Include="house.png" />
+    <Resource Include="treelimb.png" />
+    <Resource Include="treelimb2.png" />
+    <Resource Include="treelimb3.png" />
   </ItemGroup>
 
 </Project>

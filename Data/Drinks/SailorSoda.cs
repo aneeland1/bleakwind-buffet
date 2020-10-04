@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -14,11 +15,31 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// The Sailor Soda item
     /// </summary>
-    public class SailorSoda: Drink, IOrderItem
+    public class SailorSoda: Drink, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //private variables for properties
+        private bool ice = true;
+        private Size size = Size.Small;
+        private SodaFlavor flavor = SodaFlavor.Cherry;
+
         /// <summary>
-        /// gets the items price depending on size
+        /// property for size of drink
         /// </summary>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
+        /// <value>
+        /// gets the items price depending on size
+        /// </value>
         public override double Price
         {
             get
@@ -37,9 +58,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// gets item calories depending on size
-        /// </summary>
+        /// </value>
         public override uint Calories
         {
             get
@@ -58,19 +79,35 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// get the value of ice and sets the default value to true
-        /// </summary>
-        public bool Ice { get; set; } = true;
+        /// </value>
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         /// get the value of soda flavor and sets the default value to cherry
-        /// </summary>
-        public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
+        /// </value>
+        public SodaFlavor Flavor
+        {
+            get => flavor;
+            set
+            {
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+            }
+        }
 
-        /// <summary>
+        /// <value>
         ///  get list of special instructions
-        /// </summary>
+        /// </value>
         public override List<string> SpecialInstructions
         {
             get

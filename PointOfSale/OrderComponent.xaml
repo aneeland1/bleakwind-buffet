@@ -6,10 +6,15 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="430" d:DesignWidth="200">
-    <DockPanel Background="#FFB4A58D" Opacity="0.75">
-        <TextBlock DockPanel.Dock="Top"  FontFamily="Bookman Old Style" FontWeight="Bold" Foreground="#FF3A3A2A" >
+    <DockPanel Background="#FFB4A58D" Opacity="0.80">
+        <TextBlock Margin="4,0" DockPanel.Dock="Top" FontSize="20" FontWeight="Bold" Foreground="#FF3A3A2A" >
+            <TextBlock.TextDecorations>
+                <TextDecoration/>
+            </TextBlock.TextDecorations>
                    Current Order:
         </TextBlock>
-        
+        <TextBox TextWrapping="Wrap" Foreground="#FF3A3A2A" Background="#FFB4A58D" FontWeight="DemiBold" FontSize="14" Text="example of item ordered with text wrapping ">
+            
+        </TextBox>
     </DockPanel>
 </UserControl>

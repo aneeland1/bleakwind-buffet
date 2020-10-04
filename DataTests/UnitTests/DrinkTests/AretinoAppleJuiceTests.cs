@@ -18,6 +18,47 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class AretinoAppleJuiceTests
     {
         /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Ice", () =>
+            {
+                aj.Ice = true;
+            });
+
+            Assert.PropertyChanged(aj, "Ice", () =>
+            {
+                aj.Ice = false;
+            });
+        }
+
+        /// <summary>
+        /// Checks whether property is notified of a change
+        /// </summary>
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Size", () =>
+            {
+                aj.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(aj, "Size", () =>
+            {
+                aj.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(aj, "Size", () =>
+            {
+                aj.Size = Size.Small;
+            });
+        }
+
+        /// <summary>
         /// Tests that the item is a drink
         /// </summary>
         [Fact]
