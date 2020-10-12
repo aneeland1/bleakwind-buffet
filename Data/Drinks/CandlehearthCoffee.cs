@@ -17,8 +17,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class CandlehearthCoffee: Drink, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        
         //private variables for properties
         private bool ice = false;
         private bool decaf;
@@ -34,7 +33,9 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                InvokePropertyChanged("Size");
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
             }
         }
 
@@ -89,7 +90,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -102,7 +104,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 roomForCream = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("roomForCream"));
+                InvokePropertyChanged("roomForCream");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -115,7 +118,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 decaf = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("decaf"));
+                InvokePropertyChanged("decaf");
+                
             }
         }
 

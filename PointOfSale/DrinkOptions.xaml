@@ -81,7 +81,7 @@
                 <Button Click="Increase" FontWeight="Bold" FontSize="40" Content="&gt;" HorizontalAlignment="Left" 
                     VerticalAlignment="Center" Width="80" Height="60"/>
             </DockPanel>
-            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2" FontWeight="Bold" FontSize="20" 
+            <Button Name="add" Click="AddToOrder" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2" FontWeight="Bold" FontSize="20" 
                 Width="150" Height="100" >
                 <Button.Background>
                     <ImageBrush ImageSource="/treelimb.png" Stretch="UniformToFill"/>

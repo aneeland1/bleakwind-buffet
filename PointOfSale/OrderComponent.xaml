@@ -7,14 +7,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="430" d:DesignWidth="200">
     <DockPanel Background="#FFB4A58D" Opacity="0.80">
-        <TextBlock Margin="4,0" DockPanel.Dock="Top" FontSize="20" FontWeight="Bold" Foreground="#FF3A3A2A" >
+        <TextBlock Name="orderHeader" Margin="4,0" DockPanel.Dock="Top" FontSize="20" FontWeight="Bold" Foreground="#FF3A3A2A" >
             <TextBlock.TextDecorations>
                 <TextDecoration/>
             </TextBlock.TextDecorations>
-                   Current Order:
+                   
         </TextBlock>
-        <TextBox TextWrapping="Wrap" Foreground="#FF3A3A2A" Background="#FFB4A58D" FontWeight="DemiBold" FontSize="14" Text="example of item ordered with text wrapping ">
+        <ListView Name="orderList" ItemsSource="{Binding Path=SpecialInstructions}" Foreground="#FF3A3A2A" Background="#FFB4A58D" FontWeight="DemiBold" FontSize="12" >
             
-        </TextBox>
+        </ListView>
+        <Grid Height="60" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Subtotal:" FontSize="12" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock Text="Tax:" FontSize="12" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock Text="{Binding Path=Subtotal}" FontSize="12" Grid.Column="1" Grid.Row="0" />
+            <TextBlock Text="{Binding Path=Tax}" FontSize="12" Grid.Column="1" Grid.Row="1"/>
+            <TextBlock Text="Total:" FontSize="14" Grid.Column="2" Grid.Row="1"/>
+            <TextBlock Text="{Binding Path=Total}" FontSize="14" Grid.Column="3" Grid.Row="1"/>
+        </Grid>
+        
     </DockPanel>
 </UserControl>

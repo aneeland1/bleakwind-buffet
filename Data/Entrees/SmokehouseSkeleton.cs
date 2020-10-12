@@ -16,8 +16,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public class SmokehouseSkeleton: Entree, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        
         //private variables for properties
         private bool sausageLink = true;
         private bool egg = true;
@@ -43,7 +42,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 sausageLink = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
+                InvokePropertyChanged("SausageLink");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -56,7 +56,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 egg = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+                InvokePropertyChanged("Egg");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -69,7 +70,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 hashBrowns = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
+                InvokePropertyChanged("HashBrowns");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -82,7 +84,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 pancake = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
+                InvokePropertyChanged("Pancake");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

@@ -17,8 +17,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public class ThugsTBone: Entree, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        
         /// <value>
         /// gets the items price
         /// </value>

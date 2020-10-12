@@ -4,6 +4,7 @@
  * Purpose: This class represents the Category Selections of Point Of Sale
  */
 
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,9 +25,11 @@ namespace PointOfSale
     /// </summary>
     public partial class CategoryComponent : UserControl
     {
+        
         public CategoryComponent()
         {
             InitializeComponent();
+            
         }
 
         /// <summary>

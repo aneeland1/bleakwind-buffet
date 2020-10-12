@@ -11,14 +11,14 @@
         <Button Click="EntreeSelection"  Name ="entrees" Height="150" MaxWidth="650" VerticalAlignment="Top"  FontSize="100" 
                 FontWeight="Bold" Content = "Entrees"  Grid.Column="1" >
             <Button.Background>
-                <ImageBrush ImageSource="/treelimb3.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/treelimb2.png" Stretch="Fill"/>
             </Button.Background>
         </Button>
 
         <Button Click="SideSelection" Name ="sides" Height="150" MaxWidth="650" Grid.Column="1" VerticalAlignment="Center" FontSize="100" 
                 FontWeight="Bold" Content="Sides" >
             <Button.Background>
-                <ImageBrush ImageSource="/treelimb2.png" Stretch="None"/>
+                <ImageBrush ImageSource="/treelimb3.png" Stretch="None"/>
             </Button.Background>
         </Button>
         <Button Click="DrinkSelection"  Name ="drinks" Grid.Column="1" Height="150" MaxWidth="650" VerticalAlignment="Bottom" FontSize="100"  

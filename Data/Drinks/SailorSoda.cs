@@ -17,8 +17,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class SailorSoda: Drink, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        
         //private variables for properties
         private bool ice = true;
         private Size size = Size.Small;
@@ -33,7 +32,9 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                InvokePropertyChanged("Size");
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
             }
         }
 
@@ -88,7 +89,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -101,7 +103,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 flavor = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                InvokePropertyChanged("Flavor");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Amy Neeland
- * Class: DrinoOptions.xaml.cs
+ * Class: DrinkOptions.xaml.cs
  * Purpose: This class represents the drink options of Point Of Sale
  */
 
@@ -16,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 
 namespace PointOfSale
 {
@@ -43,6 +45,7 @@ namespace PointOfSale
             {
                 qty--;
                 quantity.Text = qty.ToString();
+                
             }
         }
 
@@ -76,6 +79,17 @@ namespace PointOfSale
         void Done(object sender, RoutedEventArgs e)
         {
             containerBorder.Child = new DrinkComponent();
+        }
+
+        void AddToOrder(object sender, RoutedEventArgs e)
+        {
+            
+            if(DataContext is Order order)
+            {
+                var item = this.DataContext;
+                order.Add((IOrderItem)item);
+            }
+           
         }
     }
 }

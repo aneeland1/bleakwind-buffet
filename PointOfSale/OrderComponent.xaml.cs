@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -24,9 +25,13 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+
         public OrderComponent()
         {
             InitializeComponent();
+            DataContext = Order;
         }
+
+        public Order Order { get; set; }  = new Order();
     }
 }

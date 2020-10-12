@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1100">
+        Title="MainWindow" Height="700" Width="1200">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Foreground" Value="#FFB4A58D"/>
@@ -43,10 +43,10 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width = "600*"/>
-            <ColumnDefinition Width = "200*"/>
+            <ColumnDefinition Width = "300*"/>
         </Grid.ColumnDefinitions>
         <local:CategoryComponent Margin="5" MaxHeight="500" MaxWidth="700"  />
-        <local:OrderComponent Grid.Column="1"/>
+        <local:OrderComponent x:Name="orderList" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Text = "Welcome to Bleakwind Buffet" Height="50" Width="600" 
                  FontSize="34" Background="{x:Null}" Foreground="#FF1C5F03" FontWeight="Bold" 
                  TextAlignment="Center" Margin="10"  />

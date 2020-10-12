@@ -45,10 +45,8 @@ namespace PointOfSale
             drink.DataContext = ss;
             drink.drink.Text = "Sailor Soda";
             drink.ice.Visibility = Visibility.Visible;
-            
             drink.sodaFlavors.Visibility = Visibility.Visible;
-            
-            this.DataContext = ss;
+                      
         }
 
         /// <summary>

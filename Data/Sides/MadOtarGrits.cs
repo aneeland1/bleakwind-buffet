@@ -15,8 +15,7 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class MadOtarGrits: Side, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        
         //private variables for properties
         private Size size = Size.Small;
 
@@ -29,7 +28,9 @@ namespace BleakwindBuffet.Data.Sides
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                InvokePropertyChanged("Size");
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
             }
         }
 
