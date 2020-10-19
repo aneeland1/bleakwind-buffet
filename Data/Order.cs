@@ -7,6 +7,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.Data
 {
@@ -21,10 +23,12 @@ namespace BleakwindBuffet.Data
         /// </summary>
         public Order()
         {
+            CollectionChanged += CollectionChangedListener;
             Number = nextOrderNumber;
             nextOrderNumber++;
-            CollectionChanged += CollectionChangedListener;
-            
+            BriarheartBurger bb = new BriarheartBurger();
+            bb.Ketchup = false;
+            orderItems.Add(bb);            
         }
 
         /// <summary>
@@ -32,6 +36,7 @@ namespace BleakwindBuffet.Data
         /// </summary>
         List<IOrderItem> orderItems = new List<IOrderItem>();
 
+        public string Name { get; set; }
         
         private static int nextOrderNumber = 1;
 
@@ -133,9 +138,8 @@ namespace BleakwindBuffet.Data
             {
                 List<string> instructions = new List<string>();
                 foreach (IOrderItem item in orderItems)
-                {
-                    instructions.Add(item.ToString());
-                    instructions.Add(item.SpecialInstructions.ToString());
+                {                                    
+                    instructions.AddRange(item.SpecialInstructions);
                 }
                 return instructions;
             }
@@ -148,12 +152,12 @@ namespace BleakwindBuffet.Data
         public void Add(IOrderItem item)
         {
             orderItems.Add(item);
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
             InvokePropertyChanged("SalesTaxRate");
             InvokePropertyChanged("Tax");
             InvokePropertyChanged("Total");
             InvokePropertyChanged("Calories");
-            InvokePropertyChanged("SpecialInstructions");
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
+            InvokePropertyChanged("SpecialInstructions");            
         }
 
         /// <summary>
@@ -254,8 +258,31 @@ namespace BleakwindBuffet.Data
         /// <param name="e"></param>
         public void CollectionChangedListener(object sender, NotifyCollectionChangedEventArgs e)
         {
-            InvokePropertyChanged("Count");    
-            
+            InvokePropertyChanged("Count");
+            InvokePropertyChanged("SalesTaxRate");
+            InvokePropertyChanged("Tax");
+            InvokePropertyChanged("Total");
+            InvokePropertyChanged("Calories");
+            InvokePropertyChanged("SpecialInstructions");
+            switch (e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    foreach (IOrderItem item in e.NewItems)
+                    {
+                        item.PropertyChanged += ItemChangedListener;
+                    }
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+                    foreach (IOrderItem item in e.OldItems)
+                    {
+                        item.PropertyChanged -= ItemChangedListener;
+                    }
+                    break;
+                case NotifyCollectionChangedAction.Reset:
+                    throw new NotImplementedException("NotifyCollectionChangedAction.Reset not supported");
+            }
+
+
         }
 
         public void ItemChangedListener(object sender, PropertyChangedEventArgs e)
@@ -263,8 +290,9 @@ namespace BleakwindBuffet.Data
             InvokePropertyChanged("Subtotal");
             InvokePropertyChanged("Tax");
             InvokePropertyChanged("Total");
-            InvokePropertyChanged("Calories");                  
-            
+            InvokePropertyChanged("Calories");
+            InvokePropertyChanged("SpecialInstructions");
+
         }
 
     }

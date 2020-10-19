@@ -26,6 +26,7 @@ namespace PointOfSale
     public partial class EntreeComponent : UserControl
     {
         EntreeOptions eo = new EntreeOptions();
+        public OrderComponent OrderList { get; set; }
 
         public EntreeComponent()
         {
@@ -185,7 +186,17 @@ namespace PointOfSale
         /// <param name="e">data for event</param>
         void Home(object sender, RoutedEventArgs e)
         {
-            containerBorder.Child = new CategoryComponent();
+            //containerBorder.Child = new CategoryComponent();
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow || parent is null));
+            if (parent is MainWindow category)
+            {
+                containerBorder.Child = new CategoryComponent();
+            }
+
         }
 
         /// <summary>
@@ -203,6 +214,17 @@ namespace PointOfSale
             //eo.pickle.IsChecked = true;
             eo.cheese.Visibility = Visibility.Visible;
             //eo.cheese.IsChecked = true;
+        }
+
+        /// <summary>
+        /// Action when Complete Order button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CompleteOrder(object sender, RoutedEventArgs e)
+        {
+            PaymentOptions po = new PaymentOptions(OrderList);
+            containerBorder.Child = po;
         }
 
     }

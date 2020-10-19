@@ -16,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Sides;
 
 namespace PointOfSale
 {
@@ -24,38 +26,12 @@ namespace PointOfSale
     /// </summary>
     public partial class SideOptions : UserControl
     {
+        public OrderComponent OrderList { get; set; }
+
         public SideOptions()
         {
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// Event handler for decrease quantity selection
-        /// </summary>
-        /// <param name="sender">control exectuting event</param>
-        /// <param name="e">data for event</param>
-        void Decrease(object sender, RoutedEventArgs e)
-        {
-            int qty = Convert.ToInt32(quantity.Text);
-            if (qty == 0) return;
-            else
-            {
-                qty--;
-                quantity.Text = qty.ToString();
-            }
-        }
-
-        /// <summary>
-        /// Event handler for increase quantity selection
-        /// </summary>
-        /// <param name="sender">control exectuting event</param>
-        /// <param name="e">data for event</param>
-        void Increase(object sender, RoutedEventArgs e)
-        {
-            int qty = Convert.ToInt32(quantity.Text);
-            qty++;
-            quantity.Text = qty.ToString();
-        }
+        }        
 
         /// <summary>
         /// Event handler for home button
@@ -72,9 +48,22 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">control exectuting event</param>
         /// <param name="e">data for event</param>
-        void Done(object sender, RoutedEventArgs e)
+        void Back(object sender, RoutedEventArgs e)
         {
             containerBorder.Child = new SideComponent();
+        }
+
+        /// <summary>
+        /// Todo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void AddToOrder(object sender, RoutedEventArgs e)
+        {
+            if (OrderList.DataContext is Order order)
+            {
+                order.Add((IOrderItem)this.DataContext);
+            }
         }
     }
 }

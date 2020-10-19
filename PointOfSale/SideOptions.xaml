@@ -38,27 +38,16 @@
                     <Button.Background>
                         <ImageBrush ImageSource="/house.png"/>
                     </Button.Background>
-
                 </Button>
-            </DockPanel>
-            <DockPanel MinWidth="250" VerticalAlignment="Center" Height="160" Grid.Column ="1">
-                <Button Click="Decrease" FontWeight="Bold" FontSize="40" Content="&lt;" 
-                    HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="60"/>
-                <TextBox BorderThickness="2" BorderBrush="#FF225317" Foreground="#FF225317" Background="#FFB4A58D" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                     FontSize="30" FontFamily="Bookman Old Style" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" Height="60" Name="quantity"/>
-                <Button Click="Increase" FontWeight="Bold" FontSize="40" Content="&gt;" HorizontalAlignment="Left" 
-                    VerticalAlignment="Center" Width="80" Height="60"/>
-            </DockPanel>
-            <Button Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" 
+            </DockPanel>            
+            <Button Click="AddToOrder" Name="add" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" 
                 MaxHeight="80" MaxWidth="160" Width="160"  Height="80" >
                 Add To Order
             </Button>
-            <Button Click="Done" Name="done" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1"
+            <Button Click="Back" Name="back" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1"
                 MaxHeight="80" MaxWidth="85" Width="85"  Height="80" >
-                Done
+                Back
             </Button>
-
-
         </Grid>
     </Border>
 </UserControl>

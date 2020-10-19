@@ -25,13 +25,28 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+        Order OrderList = new Order();
 
+        /// <summary>
+        /// constructor for order component
+        /// </summary>
         public OrderComponent()
         {
             InitializeComponent();
-            DataContext = Order;
+            DataContext = OrderList;
+            
         }
 
-        public Order Order { get; set; }  = new Order();
+        /// <summary>
+        /// Action when cancel order button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CancelOrder(object sender, RoutedEventArgs e)
+        {
+            OrderList = new Order();
+            
+        }
+                      
     }
 }

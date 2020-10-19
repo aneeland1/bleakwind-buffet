@@ -32,6 +32,8 @@ namespace BleakwindBuffet.Data
         private Side side = new DragonbornWaffleFries();
         private Drink drink = new AretinoAppleJuice();
         
+        public string Name { get; set; }
+
         /// <summary>
         /// property to get and set the entree of the combo
         /// </summary>

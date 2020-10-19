@@ -24,6 +24,14 @@ namespace BleakwindBuffet.Data.Sides
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
+        public string Name
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
         /// <summary>
         /// The size of the side
         /// </summary>

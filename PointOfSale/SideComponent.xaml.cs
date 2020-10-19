@@ -1,4 +1,4 @@
-﻿/*
+﻿/*//
  * Author: Amy Neeland
  * Class: SideComponent.xaml.cs
  * Purpose: This class represents the side Selections of Point Of Sale
@@ -26,6 +26,7 @@ namespace PointOfSale
     public partial class SideComponent : UserControl
     {
         SideOptions so = new SideOptions();
+        public OrderComponent OrderList { get; set; } //test
 
         public SideComponent()
         {
@@ -41,7 +42,7 @@ namespace PointOfSale
         {
             so = new SideOptions();
             containerBorder.Child = so;
-            VokunSalad vs = new VokunSalad();
+            VokunSalad vs = new VokunSalad();            
             so.DataContext = vs;
             so.side.Text = "Vokun Salad";
         }
@@ -55,7 +56,7 @@ namespace PointOfSale
         {
             so = new SideOptions();
             containerBorder.Child = so;
-            FriedMiraak fm = new FriedMiraak();
+            FriedMiraak fm = new FriedMiraak();            
             so.DataContext = fm;
             so.side.Text = "Fried Miraak";
         }
@@ -69,7 +70,7 @@ namespace PointOfSale
         {
             so = new SideOptions();
             containerBorder.Child = so;
-            MadOtarGrits mg = new MadOtarGrits();
+            MadOtarGrits mg = new MadOtarGrits();            
             so.DataContext = mg;
             so.side.Text = "Mad Otar Grits";
         }
@@ -83,7 +84,7 @@ namespace PointOfSale
         {
             so = new SideOptions();
             containerBorder.Child = so;
-            DragonbornWaffleFries df = new DragonbornWaffleFries();
+            DragonbornWaffleFries df = new DragonbornWaffleFries();            
             so.DataContext = df;
             so.side.Text = "Dragonborn Waffle Fries";
         }
@@ -95,9 +96,18 @@ namespace PointOfSale
         /// <param name="e">data for event</param>
         void Home(object sender, RoutedEventArgs e)
         {
-
             containerBorder.Child = new CategoryComponent();
+        }
 
+        /// <summary>
+        /// todo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CompleteOrder(object sender, RoutedEventArgs e)
+        {
+            PaymentOptions po = new PaymentOptions(OrderList);
+            containerBorder.Child = po;
         }
     }
 }

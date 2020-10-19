@@ -24,6 +24,8 @@ namespace BleakwindBuffet.Data.Entrees
         private bool pickle = true;
         private bool cheese = true;
 
+        
+
         /// <value>
         /// gets item price
         /// </value>

@@ -25,11 +25,12 @@ namespace PointOfSale
     /// </summary>
     public partial class CategoryComponent : UserControl
     {
-        
+        public OrderComponent OrderList{ get; set; } = new OrderComponent();
+                        
         public CategoryComponent()
         {
             InitializeComponent();
-            
+            OrderList.DataContext = new Order();
         }
 
         /// <summary>
@@ -40,6 +41,8 @@ namespace PointOfSale
         void EntreeSelection(object sender, RoutedEventArgs e)
         {
             EntreeComponent ec = new EntreeComponent();
+            ec.OrderList = OrderList;
+            ec.OrderList.DataContext = OrderList.DataContext;
             containerBorder.Child = ec;
         }
 
@@ -51,6 +54,7 @@ namespace PointOfSale
         void SideSelection(object sender, RoutedEventArgs e)
         {
             SideComponent sc = new SideComponent();
+            sc.OrderList = OrderList;
             containerBorder.Child = sc;
         }
 
@@ -61,8 +65,20 @@ namespace PointOfSale
         /// <param name="e">data for event</param>
         void DrinkSelection(object sender, RoutedEventArgs e)
         {
-            DrinkComponent dc = new DrinkComponent();
+            DrinkComponent dc = new DrinkComponent(OrderList);
+            dc.OrderList = OrderList;
             containerBorder.Child = dc;
+        }
+
+        /// <summary>
+        /// todo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CompleteOrder(object sender, RoutedEventArgs e)
+        {
+            PaymentOptions po = new PaymentOptions(OrderList);
+            containerBorder.Child = po;
         }
     }
 }

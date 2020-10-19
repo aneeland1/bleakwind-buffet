@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="700">
+             d:DesignHeight="800" d:DesignWidth="1000">
     <Border Name="containerBorder" >
         <Grid Background="#FFB4A58D" >
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="200" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
@@ -20,38 +20,44 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Click="VokunSalad" Name="vokunSalad" Grid.Column="0" Grid.Row="1" Height="100" Width="260">
+            <Button Click="VokunSalad" Name="vokunSalad" Grid.Column="0" Grid.Row="1" Margin="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="/treelimb2.png" Stretch="UniformToFill"/>
                 </Button.Background>
                 Vokun Salad
             </Button>
-            <Button Click="FriedMiraak" Name="friedMiraak" Grid.Column="0" Grid.Row="2" Height="100" Width="260">
+            <Button Click="FriedMiraak" Name="friedMiraak" Grid.Column="0" Grid.Row="2" Margin="4">
                 <Button.Background>
                     <ImageBrush ImageSource="/treelimb.png" Stretch="UniformToFill"/>
                 </Button.Background>
                 Fried Miraak
             </Button>
 
-            <Button Click="MadOtarGrits" Name="madOtarGrits" Grid.Column="1" Grid.Row="1" Height="100" Width="260">
+            <Button Click="MadOtarGrits" Name="madOtarGrits" Grid.Column="1" Grid.Row="1" Margin="4">
                 <Button.Background>
                     <ImageBrush ImageSource="/treelimb3.png" Stretch="UniformToFill"/>
                 </Button.Background>
                 Mad Otar Grits
             </Button>
-            <Button Click="DragonbornWaffleFries" Name="dragonbornWaffleFries" Grid.Column="1" Grid.Row="2" Height="100" Width="260">
+            <Button Click="DragonbornWaffleFries" Name="dragonbornWaffleFries" Grid.Column="1" Grid.Row="2" Margin="4">
                 <Button.Background>
                     <ImageBrush ImageSource="/treelimb2.png" Stretch="None"/>
                 </Button.Background>
                 Dragonborn Waffle Fries
             </Button>
 
-            <Button Click="Home" Name="home" Grid.Column="2" Grid.Row="0" MaxHeight="60" MaxWidth="100">
+            <Button Click="Home" Name="home" Grid.Column="2" Grid.Row="0">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="/house.png"/>
                 </Button.Background>
             </Button>
-            <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Text="Sides" HorizontalAlignment="Center"/>
+            <Button Click="CompleteOrder" Name="complete" Grid.Column="2" Grid.Row="3">
+                <Button.Background>
+                    <ImageBrush ImageSource="/treelimb2.png" Stretch="UniformToFill"/>
+                </Button.Background>
+                Complete Order
+            </Button>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Sides" HorizontalAlignment="Center"/>
         </Grid>
     </Border>
 </UserControl>

@@ -23,6 +23,14 @@ namespace BleakwindBuffet.Data.Entrees
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
+        public string Name
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
         /// <summary>
         /// The price of the entree
         /// </summary>

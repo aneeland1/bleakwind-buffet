@@ -5,73 +5,79 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="700">
+             d:DesignHeight="800" d:DesignWidth="1000">
     <Grid Background="#FFB4A58D">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Click="BriarheartBurger" Name="briarheartBurger" Grid.Column="0" Grid.Row="1"   
-                Height="100" Width="260">
+                Margin="8">
             <Button.Background>
                 <ImageBrush ImageSource="/treelimb2.png" Stretch="Fill"/>
             </Button.Background>
             Briarheart Burger
         </Button>
         <Button Click="DoubleDraugr" Name="doubleDraugr" Grid.Column="0" Grid.Row="2"  
-                 Height="100" Width="260">
+                 Margin="8">
             <Button.Background>
                 <ImageBrush ImageSource="/treelimb2.png" Stretch="None"/>
             </Button.Background>
             Double Draugr
         </Button>
         <Button Click="ThalmorTriple" Name="thalmorTriple" Grid.Column="0" Grid.Row="3" 
-                Height="100" Width="260">
+                Margin="8">
             <Button.Background>
                 <ImageBrush ImageSource="/treelimb3.png" Stretch="None"/>
             </Button.Background>
             Thalmor Triple
         </Button>
         <Button Click="SmokehouseSkeleton" Name="smokehouseSkeleton" Grid.Column="1" Grid.Row="1"  
-                Height="100" Width="260">
+                Margin="8">
             <Button.Background>
                 <ImageBrush ImageSource="/treelimb3.png" Stretch="UniformToFill"/>
             </Button.Background>
             Smokehouse Skeleton
         </Button>
-        <Button Click="GardenOrcOmelette" Name="gardenOrcOmelette" Grid.Column="1" Grid.Row="2" Height="100" Width="260">
+        <Button Click="GardenOrcOmelette" Name="gardenOrcOmelette" Grid.Column="1" Grid.Row="2" Margin="8">
             <Button.Background>
                 <ImageBrush ImageSource="/treelimb.png" Stretch="None"/>
             </Button.Background>
             Garden Orc Omelette
         </Button>
-        <Button Click="ThugsTBone" Name="thugsTBone" Grid.Column="1" Grid.Row="3" Height="100" Width="260">
+        <Button Click="ThugsTBone" Name="thugsTBone" Grid.Column="1" Grid.Row="3" Margin="8">
             <Button.Background>
                 <ImageBrush ImageSource="/treelimb2.png" Stretch="UniformToFill"/>
             </Button.Background>
             Thugs T-Bone
         </Button>
-        <Button Click="PhillyPoacher" Name="phillyPoacher" Grid.Column="0" Grid.Row="4" Height="100" Width="260">
+        <Button Click="PhillyPoacher" Name="phillyPoacher" Grid.Column="0" Grid.Row="4" Margin="8">
             <Button.Background>
                 <ImageBrush ImageSource="/treelimb.png" Stretch="UniformToFill"/>
             </Button.Background>
             Philly Poacher
         </Button>
         <Button Click="Home" Name="home" Grid.Column="2" Grid.Row="0"  
-                Height="55" Width="80">
+                >
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="/house.png"/>
             </Button.Background>
         </Button>
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Text="Entrees" HorizontalAlignment="Center"/>
+        <Button Click="CompleteOrder" Margin="5" Name="complete" Grid.Column="2" Grid.Row="4" FontSize="22" >
+            <Button.Background>
+                <ImageBrush ImageSource="/treelimb2.png" Stretch="UniformToFill"/>
+            </Button.Background>
+            Complete Order
+        </Button>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Entrees" HorizontalAlignment="Center"/>
         <Border Name="containerBorder" Grid.ColumnSpan="3" Grid.RowSpan="5">
         </Border>
     </Grid>

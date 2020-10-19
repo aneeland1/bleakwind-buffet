@@ -5,18 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="430" d:DesignWidth="200">
-    <DockPanel Background="#FFB4A58D" Opacity="0.80">
-        <TextBlock Name="orderHeader" Margin="4,0" DockPanel.Dock="Top" FontSize="20" FontWeight="Bold" Foreground="#FF3A3A2A" >
-            <TextBlock.TextDecorations>
-                <TextDecoration/>
-            </TextBlock.TextDecorations>
-                   
-        </TextBlock>
-        <ListView Name="orderList" ItemsSource="{Binding Path=SpecialInstructions}" Foreground="#FF3A3A2A" Background="#FFB4A58D" FontWeight="DemiBold" FontSize="12" >
-            
-        </ListView>
-        <Grid Height="60" VerticalAlignment="Bottom">
+             d:DesignHeight="800" d:DesignWidth="700">
+    <StackPanel Background="#FFB4A58D" Opacity="0.90">
+        <TextBlock Text="Welcome to Bleakwind Buffet" HorizontalAlignment="Center" Margin="4,0" DockPanel.Dock="Top" FontSize="20" FontWeight="Bold" Foreground="#FF3A3A2A" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Order Number: " Margin="4,0" DockPanel.Dock="Top" FontSize="18" FontWeight="Bold" Foreground="#FF3A3A2A" Grid.Column="0" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding Path=Number}" Name="orderHeader" Margin="4,0" DockPanel.Dock="Top" FontSize="18" FontWeight="Bold" Foreground="#FF3A3A2A" Grid.Column="1" />
+        </Grid>
+        <Border Background="#FFB4A58D">
+            <ListBox Margin="5" MinWidth="500" Foreground="#FF3A3A2A" Background="#FFB4A58D" IsSynchronizedWithCurrentItem="True" Name="orderRecap" ItemsSource="{Binding}" >
+                <ListBox.ItemTemplate >
+                    <DataTemplate>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock MinWidth="450" FontSize="12" Background="#FFB4A58D" Foreground="#FF3A3A2A" Text="{Binding Path=Name}" Grid.Row="0" />
+                            <ListBox FontFamily="Bookman Old Style" Margin="5,0" FontSize="11" Background="#FFB4A58D" Foreground="#FF3A3A2A" ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1" />
+                            <Button x:Name="removeItem" Content="Remove" FontSize="12" Grid.Row="2" MaxWidth="100"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+        <Grid Margin="5,0" Height="100" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -26,14 +44,19 @@
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="35"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Subtotal:" FontSize="12" Grid.Column="0" Grid.Row="0"/>
-            <TextBlock Text="Tax:" FontSize="12" Grid.Column="0" Grid.Row="1"/>
-            <TextBlock Text="{Binding Path=Subtotal}" FontSize="12" Grid.Column="1" Grid.Row="0" />
-            <TextBlock Text="{Binding Path=Tax}" FontSize="12" Grid.Column="1" Grid.Row="1"/>
-            <TextBlock Text="Total:" FontSize="14" Grid.Column="2" Grid.Row="1"/>
-            <TextBlock Text="{Binding Path=Total}" FontSize="14" Grid.Column="3" Grid.Row="1"/>
-        </Grid>
-        
-    </DockPanel>
+            <TextBlock Text="Calories:" FontWeight="Bold" FontSize="14" Grid.Column="0" Grid.Row="0"  />
+            <TextBlock Text="Subtotal:" FontWeight="Bold" FontSize="14" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock Text="Tax:" FontWeight="Bold" FontSize="14" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock Text="Total:" FontWeight="Bold" FontSize="14" Grid.Column="2" Grid.Row="2"/>
+            <TextBlock Text="{Binding Path=Calories}" FontWeight="Bold" FontSize="14" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock Text="{Binding Path=Subtotal, Mode=OneWay, StringFormat=N2}" FontWeight="Bold" FontSize="14" Grid.Column="1" Grid.Row="1" />
+            <TextBlock Text="{Binding Path=Tax, Mode=OneWay, StringFormat=N2}" FontWeight="Bold" FontSize="14" Grid.Column="1" Grid.Row="2"/>
+            <TextBlock x:Name="total" Text="{Binding Path=Total, Mode=OneWay, StringFormat=N2}" FontWeight="Bold" FontSize="14" Grid.Column="3" Grid.Row="2"/>
+            <Button Click="CancelOrder" Margin="20,2" Name="cancelOrder" Grid.Row="3" Grid.ColumnSpan="4" Content="Cancel Order" FontSize="14"/>
+            
+        </Grid>        
+    </StackPanel>
 </UserControl>

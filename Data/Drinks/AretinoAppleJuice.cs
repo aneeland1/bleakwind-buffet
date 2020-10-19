@@ -22,7 +22,7 @@ namespace BleakwindBuffet.Data.Drinks
         //private variables for properties
         private bool ice = false;
         private Size size = Size.Small;
-        
+                
         /// <value>
         /// Gets and sets the size of the drink
         /// </value>

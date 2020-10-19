@@ -6,6 +6,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Odbc;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,41 +28,13 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkOptions : UserControl
     {
+        public OrderComponent OrderList { get; set; }
+        
         public DrinkOptions()
         {
             InitializeComponent();
         }
-
-
-        /// <summary>
-        /// Event handler for decrease quantity selection
-        /// </summary>
-        /// <param name="sender">control exectuting event</param>
-        /// <param name="e">data for event</param>
-        void Decrease(object sender, RoutedEventArgs e)
-        {
-            int qty = Convert.ToInt32(quantity.Text);
-            if (qty == 0) return;
-            else
-            {
-                qty--;
-                quantity.Text = qty.ToString();
-                
-            }
-        }
-
-        /// <summary>
-        /// Event handler for increase quantity selection
-        /// </summary>
-        /// <param name="sender">control exectuting event</param>
-        /// <param name="e">data for event</param>
-        void Increase(object sender, RoutedEventArgs e)
-        {
-            int qty = Convert.ToInt32(quantity.Text);
-            qty++;
-            quantity.Text = qty.ToString();
-        }
-
+                       
         /// <summary>
         /// Event handler for home button selection
         /// </summary>
@@ -76,20 +50,23 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">control exectuting event</param>
         /// <param name="e">data for event</param>
-        void Done(object sender, RoutedEventArgs e)
+        void Back(object sender, RoutedEventArgs e)
         {
-            containerBorder.Child = new DrinkComponent();
+            containerBorder.Child = new DrinkComponent(OrderList);
         }
 
+        /// <summary>
+        /// Todo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void AddToOrder(object sender, RoutedEventArgs e)
-        {
+        {            
+            if(OrderList.DataContext is Order order)
+            {                
+                order.Add((IOrderItem)this.DataContext);                
+            }          
             
-            if(DataContext is Order order)
-            {
-                var item = this.DataContext;
-                order.Add((IOrderItem)item);
-            }
-           
         }
     }
 }
