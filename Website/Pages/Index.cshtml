@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Bleakwind Buffet</h1>
+    <p>
+        We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim.
+        Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger.
+        Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.
+    </p>
+    <h2>Entrees</h2>
+
+    <ul class="menu-list">
+        @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Entrees)
+        {
+        <li>
+            <div class="menu-item">
+                <h3 class="name">@item.Name</h3>                
+            </div>
+            <div class="details">
+                <div class="price">@item.Price.ToString("C2")</div>
+                <div class="calories">@item.Calories</div>
+            </div>
+        </li>
+        }
+    </ul>
+
+    <h2>Sides</h2>
+
+    <ul class="menu-list">
+        @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Sides)
+        {
+        <li>
+            <div class="menu-item">
+                <h3 class="name">@item.Name</h3>                
+            </div>
+            <div class="details">
+                <div class="price">@item.Price</div>
+                <div class="calories">@item.Calories</div>
+            </div>
+        </li>
+            
+        }
+    </ul>
+
+    <h2>Drinks</h2>
+    <ul class="menu-list">
+        @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Drinks)
+        {
+            <li>
+                <div class="menu-item">
+                    <h3 class="name">@item.Name</h3>                    
+                </div>
+                <div class="details">
+                    <div class="price">@item.Price</div>
+                    <div class="calories">@item.Calories</div>
+                </div>
+            </li>        
+        }
+    </ul>
+
+    <h2>Combos</h2>
+    <p>Create a combo. Pick any entree, any side and any drink and receive a $1 discount.</p>
+
+    <h2>Soda Flavors</h2>
+    
+    <p>Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon</p>     
+    
+</div>

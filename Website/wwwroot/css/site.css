@@ -1,0 +1,123 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/*style the menu--list*/
+ul.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid gray;
+}
+
+/*style the list of items*/
+ul.menu-list > li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/*style the details of an item*/
+div.details {
+    display: flex;
+    flex-direction: row;
+}
+
+/*style the name of the item*/
+.name {
+    font-size: 1.2rem;
+    color: darkgreen;
+    font-weight: 400;    
+}
+
+/*style the price and calories of an item*/
+.price, .calories {
+    margin: 4px;
+    font-size: 1rem;
+    color: darkgreen;
+    text-align: center;
+}
+
+/*provide a label for the price*/
+.price::before {
+    content: "Price";
+    display: block;
+    font-size: 1rem;
+}
+
+/*provide a label for the calories*/
+.calories::before {
+    content: "Calories";
+    display: block;
+    font-size: 1rem;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
