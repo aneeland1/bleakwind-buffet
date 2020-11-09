@@ -18,6 +18,12 @@ namespace Website.Pages
 {
     public class IndexModel : PageModel
     {
+        public IEnumerable<IOrderItem> Items { get; set; }
+
+        public string SearchTerms { get; set; }
+
+        public string[] ItemCategories { get; set; }
+
         /// <summary>
         /// gets the list of entrees available
         /// </summary>
@@ -40,9 +46,13 @@ namespace Website.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public void OnGet(string SearchTerms, string[] ItemCategories, uint CalorieMin, uint CalorieMax, 
+            double PriceMin, double PriceMax)
         {
-
+            Items = Menu.Search(SearchTerms);
+            Items = Menu.FilterByCategory(Items, ItemCategories);
+            Items = Menu.FilterByCalories(Items, CalorieMin, CalorieMax);
+            Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
         }
     }
 }
