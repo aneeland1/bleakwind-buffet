@@ -22,6 +22,12 @@ namespace BleakwindBuffet.Data.Entrees
         private bool tomato = true;
         private bool cheddar = true;
 
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Vegetarian.Two egg omelette packed " +
+            "with a mix of broccoli, mushrooms, and tomatoes.Topped with cheddar cheese.";
+
         /// <value>
         /// gets the items price
         /// </value>

@@ -24,6 +24,11 @@ namespace BleakwindBuffet.Data.Drinks
         private bool roomForCream = false;
         private Size size = Size.Small;
 
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Fair trade, fresh ground dark roast coffee.";
+
         /// <value>
         /// Gets and sets the Size of the drink
         /// </value>

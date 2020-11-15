@@ -23,6 +23,13 @@ namespace BleakwindBuffet.Data.Entrees
         private bool hashBrowns = true;
         private bool pancake = true;
 
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Put some meat on those bones with a small stack of pancakes. " +
+            "Includes sausage links, eggs, and hash browns on the side. " +
+            "Topped with the syrup of your choice.";
+
         /// <value>
         /// gets the items price
         /// </value>

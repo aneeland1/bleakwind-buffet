@@ -15,7 +15,11 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class MadOtarGrits: Side, IOrderItem, INotifyPropertyChanged
     {
-        
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Cheesey Grits.";
+
         //private variables for properties
         private Size size = Size.Small;
 

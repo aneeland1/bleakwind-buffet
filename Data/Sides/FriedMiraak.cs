@@ -14,7 +14,12 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class FriedMiraak: Side, IOrderItem, INotifyPropertyChanged
     {
-        
+
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Perfectly prepared hash brown pancakes.";
+
         //private variables for properties
         private Size size = Size.Small;
 

@@ -24,6 +24,12 @@ namespace BleakwindBuffet.Data.Drinks
         private SodaFlavor flavor = SodaFlavor.Cherry;
 
         /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "An old-fashioned jerked soda, " +
+            "carbonated water and flavored syrup poured over a bed of crushed ice.";
+
+        /// <summary>
         /// property for size of drink
         /// </summary>
         public override Size Size

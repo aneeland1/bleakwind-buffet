@@ -49,7 +49,18 @@ namespace Website.Pages
         public void OnGet(string SearchTerms, string[] ItemCategories, uint CalorieMin, uint CalorieMax, 
             double PriceMin, double PriceMax)
         {
-            Items = Menu.Search(SearchTerms);
+            Items = Menu.FullMenu();
+
+            /*if(SearchTerms != null)
+            {
+                Items = Items.Where(item => item.Name != null && 
+                item.Name.Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+            }*/
+
+            if (SearchTerms != null)
+            {
+                Items = Menu.Search(SearchTerms.ToLower());
+            }
             Items = Menu.FilterByCategory(Items, ItemCategories);
             Items = Menu.FilterByCalories(Items, CalorieMin, CalorieMax);
             Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);

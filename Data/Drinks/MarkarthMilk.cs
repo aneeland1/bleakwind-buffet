@@ -17,7 +17,10 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class MarkarthMilk: Drink, IOrderItem, INotifyPropertyChanged
     {
-        
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Hormone-free organic 2% milk.";
 
         //private variables for properties
         private bool ice = false;

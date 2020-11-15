@@ -22,7 +22,12 @@ namespace BleakwindBuffet.Data.Drinks
         private bool ice = true;
         private bool lemon = false;
         private Size size = Size.Small;
-        
+
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "It’s water. Just water.";
+
         /// <value>
         /// gets and sets the size of drink
         /// </value>

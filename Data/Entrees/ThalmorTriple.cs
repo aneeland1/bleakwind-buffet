@@ -29,6 +29,13 @@ namespace BleakwindBuffet.Data.Entrees
         private bool bacon = true;
         private bool egg = true;
 
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Think you are strong enough to take on the Thalmor?" +
+            "Includes two 1/4lb patties with a 1/2lb patty in between with ketchup, mustard, " +
+            "pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.";
+
         /// <value>
         /// gets the items price
         /// </value>

@@ -27,6 +27,12 @@ namespace BleakwindBuffet.Data.Entrees
         private bool lettuce = true;
         private bool mayo = true;
 
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Double patty burger on a brioche bun. " +
+            "Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.";
+
         /// <value>
         /// gets the items price
         /// </va>lue

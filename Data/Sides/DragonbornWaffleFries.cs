@@ -14,7 +14,12 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class DragonbornWaffleFries: Side, IOrderItem, INotifyPropertyChanged
     {
-        
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Crispy fried potato waffle fries.";
+
+
         //private variables for properties
         private Size size = Size.Small;
 

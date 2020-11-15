@@ -26,7 +26,7 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// Gets the item categories
         /// </summary>
-        private static string[] ItemCategories
+        public static string[] ItemCategories
         {
             get => new string[]
             {
@@ -150,14 +150,11 @@ namespace BleakwindBuffet.Data
             foreach (IOrderItem item in FullMenu())
             {
                 //Add the item if there is a match
-                if (item.Name != null && item.Name.Contains(terms))
+                if (item.Name != null && item.Name.ToLower().Contains(terms))
                 {
                     results.Add(item);
-                }
-
-                
+                }                
             }
-
             return results;
         }
 
@@ -203,7 +200,7 @@ namespace BleakwindBuffet.Data
         /// <returns>The filtered movie collection</returns>
         public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, uint? min, uint? max)
         {
-            if ((min == null && max == null) || (min==0 && max ==0)) return FullMenu();
+            if ((min == null && max == null) || (min==0 && max ==0)) return items;
 
             var results = new List<IOrderItem>();
 
@@ -250,7 +247,7 @@ namespace BleakwindBuffet.Data
         /// <returns>The filtered collection</returns>
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
         {
-            if (min == null && max == null || min== 0 && max ==0) return FullMenu();
+            if (min == null && max == null || min== 0 && max == 0) return items;
 
             var results = new List<IOrderItem>();
 

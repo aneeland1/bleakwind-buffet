@@ -32,6 +32,11 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "";
+
+        /// <summary>
         /// collection of order items
         /// </summary>
         List<IOrderItem> orderItems = new List<IOrderItem>();

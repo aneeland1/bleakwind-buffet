@@ -21,6 +21,12 @@ namespace BleakwindBuffet.Data.Entrees
         private bool onion = true;
         private bool roll = true;
 
+        /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "Cheesesteak sandwich made from grilled sirloin, " +
+            "topped with onions on a fried roll.";
+
         /// <value>
         /// gets the items price
         /// </value>

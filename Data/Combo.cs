@@ -26,6 +26,11 @@ namespace BleakwindBuffet.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// gets description of item
+        /// </summary>
+        public String Description => "";
+
+        /// <summary>
         /// private variables for properties
         /// </summary>
         private Entree entree = new BriarheartBurger();
