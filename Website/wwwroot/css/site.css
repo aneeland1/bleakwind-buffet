@@ -12,10 +12,15 @@ ul.menu-list {
 /*style the list of items*/
 ul.menu-list > li {
     list-style-type: none;
-    display: flex;
+    display:flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    margin: 10px;     
+}
+
+.desc {
+    margin: 8px;
 }
 
 /*style the details of an item*/
@@ -79,6 +84,25 @@ form#menu {
 }
 
 
+.flex-columns > ul  {
+     float: left;
+     width: 33%;
+ }
+
+
+
+@media (max-width: 490px)
+{
+    .flex-columns > div {
+        float: none;
+        width: 100%;
+    }
+}
+
+.clearfix {
+    clear: both;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -101,6 +125,8 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+
 
 /* Sticky footer styles
 -------------------------------------------------- */

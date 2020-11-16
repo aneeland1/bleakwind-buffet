@@ -22,6 +22,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public String Description => "Hormone-free organic 2% milk.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Drink";
+
         //private variables for properties
         private bool ice = false;
         private Size size = Size.Small;

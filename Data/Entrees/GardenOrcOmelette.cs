@@ -28,6 +28,11 @@ namespace BleakwindBuffet.Data.Entrees
         public String Description => "Vegetarian.Two egg omelette packed " +
             "with a mix of broccoli, mushrooms, and tomatoes.Topped with cheddar cheese.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Entree";
+
         /// <value>
         /// gets the items price
         /// </value>

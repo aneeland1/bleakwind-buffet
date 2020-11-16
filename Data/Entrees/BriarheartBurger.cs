@@ -30,6 +30,11 @@ namespace BleakwindBuffet.Data.Entrees
         public String Description => "Single patty burger on a brioche bun. " +
             "Comes with ketchup, mustard, pickle, and cheese.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Entree";
+
         /// <value>
         /// gets item price
         /// </value>

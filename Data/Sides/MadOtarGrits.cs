@@ -20,6 +20,11 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public String Description => "Cheesey Grits.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Side";
+
         //private variables for properties
         private Size size = Size.Small;
 

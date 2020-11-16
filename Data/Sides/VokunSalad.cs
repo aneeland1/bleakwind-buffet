@@ -20,6 +20,11 @@ namespace BleakwindBuffet.Data.Sides
         public String Description => "A seasonal fruit salad of mellons, berries, " +
             "mango, grape, apple, and oranges.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Side";
+
         //private variables for properties
         private Size size = Size.Small;
 

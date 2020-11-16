@@ -31,6 +31,11 @@ namespace BleakwindBuffet.Data
         public String Description => "";
 
         /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "";
+
+        /// <summary>
         /// private variables for properties
         /// </summary>
         private Entree entree = new BriarheartBurger();

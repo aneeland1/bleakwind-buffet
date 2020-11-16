@@ -36,6 +36,11 @@ namespace BleakwindBuffet.Data.Entrees
             "Includes two 1/4lb patties with a 1/2lb patty in between with ketchup, mustard, " +
             "pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Entree";
+
         /// <value>
         /// gets the items price
         /// </value>

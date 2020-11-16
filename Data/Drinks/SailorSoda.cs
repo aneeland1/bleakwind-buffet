@@ -30,6 +30,11 @@ namespace BleakwindBuffet.Data.Drinks
             "carbonated water and flavored syrup poured over a bed of crushed ice.";
 
         /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Drink";
+
+        /// <summary>
         /// property for size of drink
         /// </summary>
         public override Size Size

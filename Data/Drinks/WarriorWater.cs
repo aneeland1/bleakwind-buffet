@@ -28,6 +28,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public String Description => "It’s water. Just water.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Drink";
+
         /// <value>
         /// gets and sets the size of drink
         /// </value>

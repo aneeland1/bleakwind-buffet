@@ -15,6 +15,8 @@ namespace BleakwindBuffet.Data
     {
         string Name { get; }
 
+        string ItemType { get; }
+
         /// <summary>
         /// Price of the item
         /// </summary>

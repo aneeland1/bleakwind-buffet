@@ -30,6 +30,11 @@ namespace BleakwindBuffet.Data.Entrees
             "Includes sausage links, eggs, and hash browns on the side. " +
             "Topped with the syrup of your choice.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Entree";
+
         /// <value>
         /// gets the items price
         /// </value>

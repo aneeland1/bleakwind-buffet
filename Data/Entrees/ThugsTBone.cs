@@ -22,6 +22,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public String Description => "Juicy T-Bone, not much else to say.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Entree";
+
         /// <value>
         /// gets the items price
         /// </value>

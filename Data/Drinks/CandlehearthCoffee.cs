@@ -29,6 +29,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public String Description => "Fair trade, fresh ground dark roast coffee.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Drink";
+
         /// <value>
         /// Gets and sets the Size of the drink
         /// </value>

@@ -51,19 +51,29 @@ namespace Website.Pages
         {
             Items = Menu.FullMenu();
 
-            /*if(SearchTerms != null)
+            //filter by term
+            if(SearchTerms != null)
             {
                 Items = Items.Where(item => item.Name != null && 
-                item.Name.Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
-            }*/
+                item.Name.Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase) || 
+                item.Description.Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+            }
 
-            if (SearchTerms != null)
+            /*if (SearchTerms != null)
             {
                 Items = Menu.Search(SearchTerms.ToLower());
+            }*/
+
+            //filter by item type
+            if(ItemCategories != null && ItemCategories.Length != 0)
+            {
+                Items = Items.Where(item => ItemCategories.Contains(item.ItemType));                
             }
-            Items = Menu.FilterByCategory(Items, ItemCategories);
+
+            //Items = Menu.FilterByCategory(Items, ItemCategories);
             Items = Menu.FilterByCalories(Items, CalorieMin, CalorieMax);
             Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
+            
         }
     }
 }

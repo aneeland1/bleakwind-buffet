@@ -37,6 +37,11 @@ namespace BleakwindBuffet.Data
         public String Description => "";
 
         /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "";
+
+        /// <summary>
         /// collection of order items
         /// </summary>
         List<IOrderItem> orderItems = new List<IOrderItem>();

@@ -27,6 +27,11 @@ namespace BleakwindBuffet.Data.Entrees
         public String Description => "Cheesesteak sandwich made from grilled sirloin, " +
             "topped with onions on a fried roll.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Entree";
+
         /// <value>
         /// gets the items price
         /// </value>

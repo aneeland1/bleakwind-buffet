@@ -19,6 +19,10 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public String Description => "Crispy fried potato waffle fries.";
 
+        /// <summary>
+        /// gets menu item type
+        /// </summary>
+        public String ItemType => "Side";
 
         //private variables for properties
         private Size size = Size.Small;
